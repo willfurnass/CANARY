@@ -874,7 +874,8 @@ classdef JDBCDataSource < handle & cws.DataSource % ++++++++++++++++++++++++++++
           continue;
         end
         %            sqlQuery = [self.sqlQueryA,char(startTime),self.sqlQueryB,char(stopTime),self.sqlQueryD1,tag,sqlf.sqlQueryD2];
-        sqlQuery = [self.sqlQueryAA,char(startTime),self.sqlQueryB,char(stopTime),self.sqlQueryD1,tag,self.sqlQueryD2];
+        sqlQuery = [self.sqlQueryAA, char(startTime), self.sqlQueryB, char(stopTime), ...
+                    self.sqlQueryD1, strcat('''', tag, ''''), self.sqlQueryD2];
         if DeBug
           fid = fopen([self.data_dir_path,filesep,'debug.sql'],'at');
           fprintf(fid,'%s\n',sqlQuery);

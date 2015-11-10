@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project><!--canary_local.prj-->
+   <MCCProperties>
+      <output>canary</output>
+      <wrapper>
+         <type>WinMain</type>
+         <component_name>canary</component_name>
+         <default_class>Main function</default_class>
+      </wrapper>
+      <intermediate_dir>build</intermediate_dir>
+      <output_dir>dist</output_dir>
+      <link>exe</link>
+      <MCR_runtime_options/>
+      <generate_code_only>false</generate_code_only>
+      <verbose>false</verbose>
+      <create_CTF>false</create_CTF>
+      <options_file/>
+      <debug>false</debug>
+      <toolboxes_on_path shortcut="all"/>
+      <warning shortcut="default">
+         <warn name="specified_file_mismatch">enable</warn>
+         <warn name="repeated_file">enable</warn>
+         <warn name="switch_ignored">enable</warn>
+         <warn name="missing_lib_sentinel">enable</warn>
+         <warn name="demo_license">enable</warn>
+      </warning>
+   </MCCProperties>
+   <file_info>
+      <category name="Main function"><!--Do not modify the value of the name attribute, unless it is a class name.-->
+         <file>$(PROJECTDIR)/canary.m</file>
+      </category>
+      <category name="Other files"><!--Do not modify the value of the name attribute, unless it is a class name.-->
+         <file>$(PROJECTDIR)/cgui_cluster_editor.fig</file>
+         <file>$(PROJECTDIR)/canary_gui.fig</file>
+         <file>$(PROJECTDIR)/graphResidsWithData.ico</file>
+         <file>$(PROJECTDIR)/canary.ico</file>
+         <file>$(PROJECTDIR)/parse_configfile.m</file>
+         <file>$(PROJECTDIR)/print_version.m</file>
+         <file>$(PROJECTDIR)/create_yaml_config.m</file>
+         <file>$(PROJECTDIR)/convertCanaryData.m</file>
+         <file>$(PROJECTDIR)/writeConfig.m</file>
+         <file>$(PROJECTDIR)/run_coverage_tests.m</file>
+         <file>$(PROJECTDIR)/run_canary_tests.m</file>
+         <file>$(PROJECTDIR)/graphClusterData.m</file>
+         <file>$(PROJECTDIR)/graphCanaryData.m</file>
+         <file>$(PROJECTDIR)/create_config_file.m</file>
+         <file>$(PROJECTDIR)/Contents.m</file>
+         <file>$(PROJECTDIR)/combineEdsdFiles.m</file>
+         <file>$(PROJECTDIR)/clusterize.m</file>
+         <file>$(PROJECTDIR)/cgui_cluster_editor.m</file>
+         <file>$(PROJECTDIR)/canary_main.m</file>
+         <file>$(PROJECTDIR)/canary_gui.m</file>
+         <file>$(PROJECTDIR)/add_drivers.m</file>
+         <file>$(PROJECTDIR)/+cws/Signals.m</file>
+         <file>$(PROJECTDIR)/+cws/DataSource.m</file>
+         <file>$(PROJECTDIR)/+cws/Location.m</file>
+         <file>$(PROJECTDIR)/+cws/evaluate_timestep.m</file>
+         <file>$(PROJECTDIR)/+cws/parse_yaml_config.m</file>
+         <file>$(PROJECTDIR)/+cws/Algorithms.m</file>
+         <file>$(PROJECTDIR)/+cws/parse_xml_config.m</file>
+         <file>$(PROJECTDIR)/+cws/Timing.m</file>
+         <file>$(PROJECTDIR)/+cws/parse_defs_sigs.m</file>
+         <file>$(PROJECTDIR)/+cws/parse_defs_algs.m</file>
+         <file>$(PROJECTDIR)/+cws/Event.m</file>
+         <file>$(PROJECTDIR)/+cws/ClusterLib.m</file>
+         <file>$(PROJECTDIR)/+cws/Message.m</file>
+         <file>$(PROJECTDIR)/+cws/XMLMessage.m</file>
+         <file>$(PROJECTDIR)/+cws/verify_connection.m</file>
+         <file>$(PROJECTDIR)/+cws/trace.m</file>
+         <file>$(PROJECTDIR)/+cws/set_point_proximity.m</file>
+         <file>$(PROJECTDIR)/+cws/process_message.m</file>
+         <file>$(PROJECTDIR)/+cws/MessageList.m</file>
+         <file>$(PROJECTDIR)/+cws/MessageCenter.m</file>
+         <file>$(PROJECTDIR)/+cws/errTrace.m</file>
+         <file>$(PROJECTDIR)/+cws/ErrorCodes.m</file>
+         <file>$(PROJECTDIR)/+cws/currentTime.m</file>
+         <file>$(PROJECTDIR)/+yaml/bool2str.m</file>
+         <file>$(PROJECTDIR)/+yaml/num2str.m</file>
+         <file>$(PROJECTDIR)/+xml/get_docnode.m</file>
+         <file>$(PROJECTDIR)/+xml/get_text_array.m</file>
+         <file>$(PROJECTDIR)/+xml/get_text.m</file>
+         <file>$(PROJECTDIR)/+xml/get_child.m</file>
+         <file>$(PROJECTDIR)/+xml/get_attribute_or_text.m</file>
+         <file>$(PROJECTDIR)/+xml/get_attribute.m</file>
+         <file>$(PROJECTDIR)/+xml/bool.m</file>
+         <file>$(PROJECTDIR)/readme.txt</file>
+         <file>$(PROJECTDIR)/snakeyaml.jar</file>
+      </category>
+      <category name="C/C++ files"><!--Do not modify the value of the name attribute, unless it is a class name.--></category>
+   </file_info>
+   <packaging>
+      <name>Untitled1_pkg</name>
+      <mcr include="false"/>
+      <additional_files/>
+   </packaging>
+   <MATLABPath>
+      <Directory>$(MATLABROOT)/toolbox/compiler/deploy</Directory>
+      <Directory>$(PROJECTDIR)/</Directory>
+      <Directory>Z:\Documents\MATLAB</Directory>
+      <Directory>$(PROJECTDIR)/</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/general</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/ops</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/lang</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/elmat</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/randfun</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/elfun</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/specfun</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/matfun</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/datafun</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/polyfun</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/funfun</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/sparfun</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/scribe</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/graph2d</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/graph3d</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/specgraph</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/graphics</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/uitools</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/strfun</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/imagesci</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/iofun</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/audiovideo</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/timefun</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/datatypes</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/verctrl</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/codetools</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/helptools</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/winfun</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/demos</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/timeseries</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/hds</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/guide</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/plottools</Directory>
+      <Directory>$(MATLABROOT)/toolbox/local</Directory>
+      <Directory>$(MATLABROOT)/toolbox/shared/controllib</Directory>
+      <Directory>$(MATLABROOT)/toolbox/shared/dastudio</Directory>
+      <Directory>$(MATLABROOT)/toolbox/matlab/datamanager</Directory>
+      <Directory>$(MATLABROOT)/toolbox/compiler</Directory>
+      <Directory>$(MATLABROOT)/toolbox/database/database</Directory>
+      <Directory>$(MATLABROOT)/toolbox/database/dbdemos</Directory>
+      <Directory>$(MATLABROOT)/toolbox/database/vqb</Directory>
+      <Directory>$(MATLABROOT)/toolbox/gads</Directory>
+      <Directory>$(MATLABROOT)/toolbox/gads/gads</Directory>
+      <Directory>$(MATLABROOT)/toolbox/gads/gadsdemos</Directory>
+      <Directory>$(MATLABROOT)/toolbox/images/colorspaces</Directory>
+      <Directory>$(MATLABROOT)/toolbox/images/images</Directory>
+      <Directory>$(MATLABROOT)/toolbox/images/imdemos</Directory>
+      <Directory>$(MATLABROOT)/toolbox/images/imuitools</Directory>
+      <Directory>$(MATLABROOT)/toolbox/images/iptformats</Directory>
+      <Directory>$(MATLABROOT)/toolbox/images/iptutils</Directory>
+      <Directory>$(MATLABROOT)/toolbox/shared/imageslib</Directory>
+      <Directory>$(MATLABROOT)/toolbox/shared/spcuilib</Directory>
+      <Directory>$(MATLABROOT)/toolbox/optim/optim</Directory>
+      <Directory>$(MATLABROOT)/toolbox/optim/optimdemos</Directory>
+      <Directory>$(MATLABROOT)/toolbox/shared/optimlib</Directory>
+      <Directory>$(MATLABROOT)/toolbox/signal/signal</Directory>
+      <Directory>$(MATLABROOT)/toolbox/signal/sigtools</Directory>
+      <Directory>$(MATLABROOT)/toolbox/signal/sptoolgui</Directory>
+      <Directory>$(MATLABROOT)/toolbox/signal/sigdemos</Directory>
+      <Directory>$(MATLABROOT)/toolbox/shared/siglib</Directory>
+      <Directory>$(MATLABROOT)/toolbox/stats</Directory>
+      <Directory>$(MATLABROOT)/toolbox/shared/statslib</Directory>
+   </MATLABPath>
+</project>

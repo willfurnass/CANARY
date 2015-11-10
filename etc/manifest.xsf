@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This file is automatically created and modified by Microsoft Office InfoPath.
+Changes made to the file outside of InfoPath might be lost if the form template is modified in InfoPath.
+-->
+<xsf:xDocumentClass trustSetting="automatic" trustLevel="restricted" solutionFormatVersion="2.0.0.0" solutionVersion="1.0.0.29" productVersion="12.0.0" publishUrl="P:\Software\canary\trunk\etc\manifest.xsf" name="urn:schemas-microsoft-com:office:infopath:etc:" xmlns:xsf="http://schemas.microsoft.com/office/infopath/2003/solutionDefinition" xmlns:xsf2="http://schemas.microsoft.com/office/infopath/2006/solutionDefinition/extensions" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:xdUtil="http://schemas.microsoft.com/office/infopath/2003/xslt/Util" xmlns:xdXDocument="http://schemas.microsoft.com/office/infopath/2003/xslt/xDocument" xmlns:xdMath="http://schemas.microsoft.com/office/infopath/2003/xslt/Math" xmlns:xdDate="http://schemas.microsoft.com/office/infopath/2003/xslt/Date" xmlns:xdExtension="http://schemas.microsoft.com/office/infopath/2003/xslt/extension" xmlns:xdEnvironment="http://schemas.microsoft.com/office/infopath/2006/xslt/environment" xmlns:xdUser="http://schemas.microsoft.com/office/infopath/2006/xslt/User" xmlns:xd="http://schemas.microsoft.com/office/infopath/2003" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:my="http://schemas.microsoft.com/office/infopath/2003/myXSD/2010-09-24T21:30:38">
+	<xsf:package>
+		<xsf:files>
+			<xsf:file name="canary43.xsd">
+				<xsf:fileProperties>
+					<xsf:property name="editability" type="string" value="none"></xsf:property>
+					<xsf:property name="rootElement" type="string" value="canary"></xsf:property>
+					<xsf:property name="useOnDemandAlgorithm" type="string" value="yes"></xsf:property>
+				</xsf:fileProperties>
+			</xsf:file>
+			<xsf:file name="template.xml"></xsf:file>
+			<xsf:file name="sampledata.xml">
+				<xsf:fileProperties>
+					<xsf:property name="fileType" type="string" value="sampleData"></xsf:property>
+				</xsf:fileProperties>
+			</xsf:file>
+			<xsf:file name="view1.xsl">
+				<xsf:fileProperties>
+					<xsf:property name="lang" type="string" value="1033"></xsf:property>
+					<xsf:property name="showPageWidthIndicator" type="string" value="yes"></xsf:property>
+					<xsf:property name="mode" type="string" value="26"></xsf:property>
+					<xsf:property name="componentId" type="string" value="268"></xsf:property>
+					<xsf:property name="xmlToEditName" type="string" value="260"></xsf:property>
+				</xsf:fileProperties>
+			</xsf:file>
+			<xsf:file name="94AEC0E5.png">
+				<xsf:fileProperties>
+					<xsf:property name="fileType" type="string" value="viewComponent"></xsf:property>
+				</xsf:fileProperties>
+			</xsf:file>
+			<xsf:file name="upgrade.xsl"></xsf:file>
+		</xsf:files>
+	</xsf:package>
+	<xsf:importParameters enabled="yes"></xsf:importParameters>
+	<xsf:documentVersionUpgrade>
+		<xsf:useTransform transform="upgrade.xsl" minVersionToUpgrade="0.0.0.0" maxVersionToUpgrade="1.0.0.3"></xsf:useTransform>
+	</xsf:documentVersionUpgrade>
+	<xsf:extensions>
+		<xsf:extension name="SolutionDefinitionExtensions">
+			<xsf2:solutionDefinition runtimeCompatibility="client server" allowClientOnlyCode="no">
+				<xsf2:offline openIfQueryFails="yes" cacheQueries="yes"></xsf2:offline>
+				<xsf2:server isPreSubmitPostBackEnabled="no" isMobileEnabled="no" formLocale="en-US"></xsf2:server>
+				<xsf2:viewsExtension>
+					<xsf2:viewExtension ref="CANARY Configuration" clientOnly="yes" designMode="normal"></xsf2:viewExtension>
+				</xsf2:viewsExtension>
+			</xsf2:solutionDefinition>
+		</xsf:extension>
+	</xsf:extensions>
+	<xsf:views default="CANARY Configuration">
+		<xsf:view name="CANARY Configuration" caption="CANARY Configuration" designMode="protected">
+			<xsf:mainpane transform="view1.xsl"></xsf:mainpane>
+			<xsf:editing>
+				<xsf:xmlToEdit name="SignalsFile_3" item="/canary/general-settings/SignalsFile" container="/canary">
+					<xsf:editWith caption="SignalsFile" xd:autogeneration="template" component="xOptional">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="general-settings/SignalsFile">
+								<general-settings>
+									<SignalsFile name=""></SignalsFile>
+								</general-settings>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="classpath_1" item="/canary/classpath" container="/canary">
+					<xsf:editWith caption="classpath" component="xCollection">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="classpath">
+								<classpath></classpath>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="AlgorithmsFile_2" item="/canary/general-settings/AlgorithmsFile" container="/canary">
+					<xsf:editWith caption="AlgorithmsFile" xd:autogeneration="template" component="xOptional">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="general-settings/AlgorithmsFile">
+								<general-settings>
+									<AlgorithmsFile name=""></AlgorithmsFile>
+								</general-settings>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="end-date_11" item="/canary/timing-options/@end-date">
+					<xsf:editWith proofing="no" autoComplete="no" component="xField"></xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="start-date_10" item="/canary/timing-options/@start-date">
+					<xsf:editWith proofing="no" autoComplete="no" component="xField"></xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="start-date_45" item="/canary/timing-options/@start-date">
+					<xsf:editWith proofing="no" autoComplete="no" component="xField"></xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="end-date_46" item="/canary/timing-options/@end-date">
+					<xsf:editWith proofing="no" autoComplete="no" component="xField"></xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="datasource_58" item="/canary/datasource" container="/canary" viewContext="CTRL79_5">
+					<xsf:editWith caption="datasource" xd:autogeneration="template" component="xCollection">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="datasource">
+								<datasource short-id="" state="enabled" type="CSV" input-type="" output-type="">
+									<location></location>
+									<ipaddress></ipaddress>
+									<port></port>
+									<url-type></url-type>
+									<datasource-class></datasource-class>
+									<driver-config></driver-config>
+									<input-table></input-table>
+									<output-table></output-table>
+									<timestep-field></timestep-field>
+									<to-date-func></to-date-func>
+									<to-date-fmt></to-date-fmt>
+									<username></username>
+									<password></password>
+									<interactive-login>false</interactive-login>
+									<canary-id></canary-id>
+								</datasource>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="datasource_64" item="/canary/datasource" container="/canary" viewContext="CTRL100">
+					<xsf:editWith caption="datasource" xd:autogeneration="template" component="xCollection">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="datasource">
+								<datasource short-id="" state="enabled" type="CSV" input-type="" output-type="">
+									<location></location>
+									<ipaddress></ipaddress>
+									<port></port>
+									<url-type></url-type>
+									<datasource-class></datasource-class>
+									<driver-config></driver-config>
+									<input-table></input-table>
+									<output-table></output-table>
+									<timestep-field></timestep-field>
+									<to-date-func></to-date-func>
+									<to-date-fmt></to-date-fmt>
+									<username></username>
+									<password></password>
+									<interactive-login>false</interactive-login>
+									<canary-id></canary-id>
+								</datasource>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="CompositeSignal_102" item="/canary/Signals/Signal/CompositeSignal" container="/canary/Signals/Signal">
+					<xsf:editWith caption="CompositeSignal" component="xOptional">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="CompositeSignal">
+								<CompositeSignal>
+									<Entry var="" shift="" const="" cmd=""></Entry>
+								</CompositeSignal>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="DataType_100" item="/canary/Signals/Signal/DataType" container="/canary/Signals/Signal">
+					<xsf:editWith caption="DataType" component="xOptional">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="DataType">
+								<DataType precision="" units="" data-min="" data-max="" set-point-min="" set-point-max=""></DataType>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="AlarmType_101" item="/canary/Signals/Signal/AlarmType" container="/canary/Signals/Signal">
+					<xsf:editWith caption="AlarmType" component="xOptional">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="AlarmType">
+								<AlarmType alarm-scope="" active="" tracking-lag=""></AlarmType>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="Signal_96" item="/canary/Signals/Signal" container="/canary" viewContext="CTRL146">
+					<xsf:editWith caption="Signal" xd:autogeneration="template" component="xCollection">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="Signals/Signal">
+								<Signals>
+									<Signal name="" scada-tag="" signal-type="WQ" parameter="" ignore-changes="none"></Signal>
+								</Signals>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="Signal_91" item="/canary/Signals/Signal" container="/canary" viewContext="CTRL127_5">
+					<xsf:editWith caption="Signal" xd:autogeneration="template" component="xCollection">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="Signals/Signal">
+								<Signals>
+									<Signal name="" scada-tag="" signal-type="WQ" parameter="" ignore-changes="none"></Signal>
+								</Signals>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="Entry_113" item="/canary/Signals/Signal/CompositeSignal/Entry" container="/canary/Signals/Signal/CompositeSignal">
+					<xsf:editWith caption="Entry" xd:autogeneration="template" component="xCollection">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="Entry">
+								<Entry var="" shift="" const="" cmd=""></Entry>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="alarm-scope_123" item="/canary/Signals/Signal/AlarmType/@alarm-scope">
+					<xsf:editWith autoComplete="no" component="xField"></xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="Algorithm_125" item="/canary/Algorithms/Algorithm" container="/canary" viewContext="CTRL183_5">
+					<xsf:editWith caption="Algorithm" xd:autogeneration="template" component="xCollection">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="Algorithms/Algorithm">
+								<Algorithms>
+									<Algorithm name="" type="LPCF" history-window-TS="" outlier-threshold-SD="" event-threshold-P="" event-timeout-TS="">
+										<BED bed-window-TS="" bed-P-outlier="0.5"></BED>
+										<UseAlgorithm name=""></UseAlgorithm>
+									</Algorithm>
+								</Algorithms>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="ExternalAlgorithm_141" item="/canary/Algorithms/Algorithm/ExternalAlgorithm" container="/canary/Algorithms/Algorithm">
+					<xsf:editWith caption="ExternalAlgorithm" component="xOptional">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="ExternalAlgorithm">
+								<ExternalAlgorithm class=""></ExternalAlgorithm>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="Clustering_142" item="/canary/Algorithms/Algorithm/Clustering" container="/canary/Algorithms/Algorithm">
+					<xsf:editWith caption="Clustering" component="xOptional">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="Clustering">
+								<Clustering load-from-file=""></Clustering>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="Algorithm_132" item="/canary/Algorithms/Algorithm" container="/canary" viewContext="CTRL203">
+					<xsf:editWith caption="Algorithm" xd:autogeneration="template" component="xCollection">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="Algorithms/Algorithm">
+								<Algorithms>
+									<Algorithm name="" type="LPCF" history-window-TS="" outlier-threshold-SD="" event-threshold-P="" event-timeout-TS="">
+										<BED bed-window-TS="" bed-P-outlier="0.5"></BED>
+										<UseAlgorithm name=""></UseAlgorithm>
+									</Algorithm>
+								</Algorithms>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="BED_139" item="/canary/Algorithms/Algorithm/BED" container="/canary/Algorithms/Algorithm">
+					<xsf:editWith caption="BED" component="xOptional">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="BED">
+								<BED bed-window-TS="" bed-P-outlier=""></BED>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="UseAlgorithm_124" item="/canary/Algorithms/Algorithm/UseAlgorithm" container="/canary/Algorithms/Algorithm">
+					<xsf:editWith caption="UseAlgorithm" xd:autogeneration="template" component="xCollection">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="UseAlgorithm">
+								<UseAlgorithm name=""></UseAlgorithm>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="use-input_153" item="/canary/general-settings/Station/use-input" container="/canary/general-settings/Station">
+					<xsf:editWith caption="use-input" component="xCollection" xd:autogeneration="template">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="use-input">
+								<use-input id=""></use-input>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="Station_161" item="/canary/general-settings/Station" container="/canary" viewContext="CTRL242">
+					<xsf:editWith caption="Station" xd:autogeneration="template" component="xCollection">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="general-settings/Station">
+								<general-settings>
+									<Station scada-id="" output_Station="" output_TagName="" output_PointNr="" state="enabled" patListDir="PatternList" patGraphicsDir="Patterns">
+										<use-input id=""></use-input>
+										<use-output id=""></use-output>
+										<use-signal id="" no-cluster="false"></use-signal>
+										<use-algorithm id=""></use-algorithm>
+									</Station>
+								</general-settings>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="use-algorithm_155" item="/canary/general-settings/Station/use-algorithm" container="/canary/general-settings/Station">
+					<xsf:editWith caption="use-algorithm" component="xCollection" xd:autogeneration="template">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="use-algorithm">
+								<use-algorithm id=""></use-algorithm>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="state_152" item="/canary/general-settings/Station/@state" viewContext="CTRL247">
+					<xsf:editWith proofing="no" autoComplete="no" component="xField"></xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="use-output_154" item="/canary/general-settings/Station/use-output" container="/canary/general-settings/Station">
+					<xsf:editWith caption="use-output" component="xCollection" xd:autogeneration="template">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="use-output">
+								<use-output id=""></use-output>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="Station_158" item="/canary/general-settings/Station" container="/canary" viewContext="CTRL225_5">
+					<xsf:editWith caption="Station" xd:autogeneration="template" component="xCollection">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="general-settings/Station">
+								<general-settings>
+									<Station scada-id="" output_Station="" output_TagName="" output_PointNr="" state="enabled" patListDir="PatternList" patGraphicsDir="Patterns">
+										<use-input id=""></use-input>
+										<use-output id=""></use-output>
+										<use-signal id="" no-cluster="false"></use-signal>
+										<use-algorithm id=""></use-algorithm>
+									</Station>
+								</general-settings>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="use-signal_156" item="/canary/general-settings/Station/use-signal" container="/canary/general-settings/Station">
+					<xsf:editWith caption="use-signal" component="xCollection" xd:autogeneration="template">
+						<xsf:fragmentToInsert>
+							<xsf:chooseFragment innerFragment="use-signal">
+								<use-signal id="" no-cluster="false"></use-signal>
+							</xsf:chooseFragment>
+						</xsf:fragmentToInsert>
+					</xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="alarm-scope_257" item="/canary/Signals/Signal/AlarmType/@alarm-scope">
+					<xsf:editWith autoComplete="no" component="xField"></xsf:editWith>
+				</xsf:xmlToEdit>
+				<xsf:xmlToEdit name="datetime-format_184" item="/canary/timing-options/@datetime-format">
+					<xsf:editWith proofing="no" autoComplete="no" component="xField"></xsf:editWith>
+				</xsf:xmlToEdit>
+			</xsf:editing>
+			<xsf:menuArea name="msoInsertMenu">
+				<xsf:menu caption="&amp;Section">
+					<xsf:button action="xCollection::insert" xmlToEdit="classpath_1" caption="classpath"></xsf:button>
+					<xsf:button action="xCollection::insert" xmlToEdit="datasource_58" caption="datasource"></xsf:button>
+					<xsf:button action="xCollection::insert" xmlToEdit="datasource_64" caption="datasource"></xsf:button>
+					<xsf:button action="xCollection::insert" xmlToEdit="Signal_91" caption="Signal"></xsf:button>
+					<xsf:button action="xCollection::insert" xmlToEdit="Signal_96" caption="Signal"></xsf:button>
+					<xsf:button action="xCollection::insert" xmlToEdit="Entry_113" caption="Entry"></xsf:button>
+					<xsf:button action="xCollection::insert" xmlToEdit="UseAlgorithm_124" caption="UseAlgorithm"></xsf:button>
+					<xsf:button action="xCollection::insert" xmlToEdit="Algorithm_125" caption="Algorithm"></xsf:button>
+					<xsf:button action="xCollection::insert" xmlToEdit="Algorithm_132" caption="Algorithm"></xsf:button>
+					<xsf:button action="xCollection::insert" xmlToEdit="use-input_153" caption="use-input"></xsf:button>
+					<xsf:button action="xCollection::insert" xmlToEdit="use-output_154" caption="use-output"></xsf:button>
+					<xsf:button action="xCollection::insert" xmlToEdit="use-algorithm_155" caption="use-algorithm"></xsf:button>
+					<xsf:button action="xCollection::insert" xmlToEdit="use-signal_156" caption="use-signal"></xsf:button>
+					<xsf:button action="xCollection::insert" xmlToEdit="Station_158" caption="Station"></xsf:button>
+					<xsf:button action="xCollection::insert" xmlToEdit="Station_161" caption="Station"></xsf:button>
+					<xsf:button action="xOptional::insert" xmlToEdit="AlgorithmsFile_2" caption="AlgorithmsFile"></xsf:button>
+					<xsf:button action="xOptional::insert" xmlToEdit="SignalsFile_3" caption="SignalsFile"></xsf:button>
+					<xsf:button action="xOptional::insert" xmlToEdit="DataType_100" caption="DataType"></xsf:button>
+					<xsf:button action="xOptional::insert" xmlToEdit="AlarmType_101" caption="AlarmType"></xsf:button>
+					<xsf:button action="xOptional::insert" xmlToEdit="CompositeSignal_102" caption="CompositeSignal"></xsf:button>
+					<xsf:button action="xOptional::insert" xmlToEdit="BED_139" caption="BED"></xsf:button>
+					<xsf:button action="xOptional::insert" xmlToEdit="ExternalAlgorithm_141" caption="ExternalAlgorithm"></xsf:button>
+					<xsf:button action="xOptional::insert" xmlToEdit="Clustering_142" caption="Clustering"></xsf:button>
+				</xsf:menu>
+			</xsf:menuArea>
+			<xsf:menuArea name="msoStructuralEditingContextMenu">
+				<xsf:button action="xCollection::insertBefore" xmlToEdit="classpath_1" caption="Insert classpath before" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertBefore" xmlToEdit="datasource_58" caption="Insert datasource before" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertBefore" xmlToEdit="datasource_64" caption="Insert datasource before" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertBefore" xmlToEdit="Signal_91" caption="Insert Signal before" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertBefore" xmlToEdit="Signal_96" caption="Insert Signal before" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertBefore" xmlToEdit="Entry_113" caption="Insert Entry before" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertBefore" xmlToEdit="UseAlgorithm_124" caption="Insert UseAlgorithm before" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertBefore" xmlToEdit="Algorithm_125" caption="Insert Algorithm before" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertBefore" xmlToEdit="Algorithm_132" caption="Insert Algorithm before" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertBefore" xmlToEdit="use-input_153" caption="Insert use-input before" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertBefore" xmlToEdit="use-output_154" caption="Insert use-output before" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertBefore" xmlToEdit="use-algorithm_155" caption="Insert use-algorithm before" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertBefore" xmlToEdit="use-signal_156" caption="Insert use-signal before" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertBefore" xmlToEdit="Station_158" caption="Insert Station before" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertBefore" xmlToEdit="Station_161" caption="Insert Station before" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertAfter" xmlToEdit="classpath_1" caption="Insert classpath after" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertAfter" xmlToEdit="datasource_58" caption="Insert datasource after" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertAfter" xmlToEdit="datasource_64" caption="Insert datasource after" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertAfter" xmlToEdit="Signal_91" caption="Insert Signal after" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertAfter" xmlToEdit="Signal_96" caption="Insert Signal after" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertAfter" xmlToEdit="Entry_113" caption="Insert Entry after" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertAfter" xmlToEdit="UseAlgorithm_124" caption="Insert UseAlgorithm after" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertAfter" xmlToEdit="Algorithm_125" caption="Insert Algorithm after" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertAfter" xmlToEdit="Algorithm_132" caption="Insert Algorithm after" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertAfter" xmlToEdit="use-input_153" caption="Insert use-input after" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertAfter" xmlToEdit="use-output_154" caption="Insert use-output after" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertAfter" xmlToEdit="use-algorithm_155" caption="Insert use-algorithm after" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertAfter" xmlToEdit="use-signal_156" caption="Insert use-signal after" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertAfter" xmlToEdit="Station_158" caption="Insert Station after" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insertAfter" xmlToEdit="Station_161" caption="Insert Station after" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::remove" xmlToEdit="classpath_1" caption="Remove classpath" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::remove" xmlToEdit="datasource_58" caption="Remove datasource" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::remove" xmlToEdit="datasource_64" caption="Remove datasource" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::remove" xmlToEdit="Signal_91" caption="Remove Signal" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::remove" xmlToEdit="Signal_96" caption="Remove Signal" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::remove" xmlToEdit="Entry_113" caption="Remove Entry" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::remove" xmlToEdit="UseAlgorithm_124" caption="Remove UseAlgorithm" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::remove" xmlToEdit="Algorithm_125" caption="Remove Algorithm" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::remove" xmlToEdit="Algorithm_132" caption="Remove Algorithm" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::remove" xmlToEdit="use-input_153" caption="Remove use-input" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::remove" xmlToEdit="use-output_154" caption="Remove use-output" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::remove" xmlToEdit="use-algorithm_155" caption="Remove use-algorithm" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::remove" xmlToEdit="use-signal_156" caption="Remove use-signal" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::remove" xmlToEdit="Station_158" caption="Remove Station" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::remove" xmlToEdit="Station_161" caption="Remove Station" showIf="immediate"></xsf:button>
+				<xsf:button action="xOptional::remove" xmlToEdit="AlgorithmsFile_2" caption="Remove AlgorithmsFile" showIf="immediate"></xsf:button>
+				<xsf:button action="xOptional::remove" xmlToEdit="SignalsFile_3" caption="Remove SignalsFile" showIf="immediate"></xsf:button>
+				<xsf:button action="xOptional::remove" xmlToEdit="DataType_100" caption="Remove DataType" showIf="immediate"></xsf:button>
+				<xsf:button action="xOptional::remove" xmlToEdit="AlarmType_101" caption="Remove AlarmType" showIf="immediate"></xsf:button>
+				<xsf:button action="xOptional::remove" xmlToEdit="CompositeSignal_102" caption="Remove CompositeSignal" showIf="immediate"></xsf:button>
+				<xsf:button action="xOptional::remove" xmlToEdit="BED_139" caption="Remove BED" showIf="immediate"></xsf:button>
+				<xsf:button action="xOptional::remove" xmlToEdit="ExternalAlgorithm_141" caption="Remove ExternalAlgorithm" showIf="immediate"></xsf:button>
+				<xsf:button action="xOptional::remove" xmlToEdit="Clustering_142" caption="Remove Clustering" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insert" xmlToEdit="classpath_1" caption="Insert classpath" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insert" xmlToEdit="datasource_58" caption="Insert datasource" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insert" xmlToEdit="datasource_64" caption="Insert datasource" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insert" xmlToEdit="Signal_91" caption="Insert Signal" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insert" xmlToEdit="Signal_96" caption="Insert Signal" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insert" xmlToEdit="Entry_113" caption="Insert Entry" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insert" xmlToEdit="UseAlgorithm_124" caption="Insert UseAlgorithm" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insert" xmlToEdit="Algorithm_125" caption="Insert Algorithm" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insert" xmlToEdit="Algorithm_132" caption="Insert Algorithm" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insert" xmlToEdit="use-input_153" caption="Insert use-input" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insert" xmlToEdit="use-output_154" caption="Insert use-output" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insert" xmlToEdit="use-algorithm_155" caption="Insert use-algorithm" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insert" xmlToEdit="use-signal_156" caption="Insert use-signal" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insert" xmlToEdit="Station_158" caption="Insert Station" showIf="immediate"></xsf:button>
+				<xsf:button action="xCollection::insert" xmlToEdit="Station_161" caption="Insert Station" showIf="immediate"></xsf:button>
+				<xsf:button action="xOptional::insert" xmlToEdit="AlgorithmsFile_2" caption="Insert AlgorithmsFile" showIf="immediate"></xsf:button>
+				<xsf:button action="xOptional::insert" xmlToEdit="SignalsFile_3" caption="Insert SignalsFile" showIf="immediate"></xsf:button>
+				<xsf:button action="xOptional::insert" xmlToEdit="DataType_100" caption="Insert DataType" showIf="immediate"></xsf:button>
+				<xsf:button action="xOptional::insert" xmlToEdit="AlarmType_101" caption="Insert AlarmType" showIf="immediate"></xsf:button>
+				<xsf:button action="xOptional::insert" xmlToEdit="CompositeSignal_102" caption="Insert CompositeSignal" showIf="immediate"></xsf:button>
+				<xsf:button action="xOptional::insert" xmlToEdit="BED_139" caption="Insert BED" showIf="immediate"></xsf:button>
+				<xsf:button action="xOptional::insert" xmlToEdit="ExternalAlgorithm_141" caption="Insert ExternalAlgorithm" showIf="immediate"></xsf:button>
+				<xsf:button action="xOptional::insert" xmlToEdit="Clustering_142" caption="Insert Clustering" showIf="immediate"></xsf:button>
+			</xsf:menuArea>
+			<xsf:printSettings>
+				<xsf:header>
+					<font style="font: 10pt Verdana;"><div style="direction:ltr; text-align:left">CANARY Configuration &amp;b&amp;p/&amp;P</div></font>
+				</xsf:header>
+			</xsf:printSettings>
+		</xsf:view>
+	</xsf:views>
+	<xsf:applicationParameters application="InfoPath Design Mode">
+		<xsf:solutionProperties lastOpenView="view1.xsl" lastVersionNeedingTransform="1.0.0.3" fullyEditableNamespace="http://schemas.microsoft.com/office/infopath/2003/myXSD/2010-09-24T21:30:38"></xsf:solutionProperties>
+	</xsf:applicationParameters>
+	<xsf:documentSchemas>
+		<xsf:documentSchema rootSchema="yes" location="canary43.xsd"></xsf:documentSchema>
+	</xsf:documentSchemas>
+	<xsf:fileNew>
+		<xsf:initialXmlDocument caption="etc" href="template.xml"></xsf:initialXmlDocument>
+	</xsf:fileNew>
+	<xsf:customValidation>
+		<xsf:errorCondition match="/canary/Signals/Signal/CompositeSignal/Entry/@shift" expressionContext="." expression="xdUtil:Match(string(.), &quot;\d+&quot;)">
+			<xsf:errorMessage type="modeless" shortMessage="Integer value"></xsf:errorMessage>
+		</xsf:errorCondition>
+	</xsf:customValidation>
+</xsf:xDocumentClass>

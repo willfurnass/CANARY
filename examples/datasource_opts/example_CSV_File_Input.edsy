@@ -1,0 +1,316 @@
+--- # CANARY Config File
+# Auto generated - 2012-01-03T13:32:06
+
+canary:
+  run mode: BATCH
+  control type: INTERNAL
+  control messenger: null
+  driver files: null
+
+# Enter the time step options below
+timing options:
+  dynamic start-stop: off
+  date-time format: yyyy-mm-dd HH:MM:SS
+  date-time start:  2008-01-14 19:00:00
+  date-time stop:   2008-01-30 08:48:00
+  data interval: 00:02:00
+  message interval: 00:00:01
+
+# Enter the list of data sources below
+data sources:
+- id: csvfile
+  type       : csv
+  location   : ../sample_data/test_station_d.csv
+  enabled    : yes
+  timestep options:
+    field: "TIME_STEP"
+    format: "mm/dd/yyyy HH:MM"
+
+# Enter the list of SCADA/composite signals/parameters below
+signals:
+- id: TEST_CL
+  SCADA tag: D_CL2_VAL
+  evaluation type: wq
+  parameter type: CL2
+  ignore changes: none
+  data options:
+    precision: 0.0035
+    units: 'Mg/L'
+    valid range: [0.01, 5]
+    set points: [-.inf, 3]
+
+- id: TEST_COND
+  SCADA tag: D_COND_VAL
+  evaluation type: wq
+  parameter type: COND
+  ignore changes: none
+  data options:
+    precision: 1
+    units: '{\mu}S/cm'
+    valid range: [100, 1000]
+    set points: [-.inf, .inf]
+
+- id: TEST_PH
+  SCADA tag: D_PH_VAL
+  evaluation type: wq
+  parameter type: PH
+  ignore changes: none
+  data options:
+    precision: 0.01
+    units: 'pH'
+    valid range: [2, 12]
+    set points: [-.inf, .inf]
+
+- id: TEST_TEMP
+  SCADA tag: D_TEMP_VAL
+  evaluation type: op
+  parameter type: TEMP
+  ignore changes: all
+  data options:
+    precision: 0.1
+    units: '^oC'
+    valid range: [3, 60]
+    set points: [-.inf, .inf]
+
+- id: TEST_TOC
+  SCADA tag: D_TOC_VAL
+  evaluation type: wq
+  parameter type: TOC
+  ignore changes: none
+  data options:
+    precision: 0.01
+    units: 'ppm'
+    valid range: [0, 5]
+    set points: [-.inf, .inf]
+
+- id: TEST_TURB
+  SCADA tag: D_TURB_VAL
+  evaluation type: wq
+  parameter type: TURB
+  ignore changes: none
+  data options:
+    precision: 0.01
+    units: 'NTU'
+    valid range: [0.01, 1]
+    set points: [-.inf, .inf]
+
+- id: TEST_PUMP_CONN_FLOW
+  SCADA tag: D_PUMP_FLOW
+  evaluation type: op
+  parameter type: FLOW
+  ignore changes: none
+  data options:
+    precision: 0.01
+    units: 'gpm'
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_PUMP1_FLOW
+  SCADA tag: D_PUMP_IN1_FLOW
+  evaluation type: op
+  parameter type: FLOW
+  ignore changes: none
+  data options:
+    precision: 0.01
+    units: 'gpm'
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_PUMP2_FLOW
+  SCADA tag: D_PUMP_IN2_FLOW
+  evaluation type: op
+  parameter type: FLOW
+  ignore changes: none
+  data options:
+    precision: 0.01
+    units: 'gpm'
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_PUMPS
+  SCADA tag: D_TEST_PUMPS
+  evaluation type: op
+  parameter type: FLOW
+  ignore changes: none
+  data options:
+    precision: 0.0001
+    units: ''
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+  composite rules: |
+    @D_PUMP_IN1_FLOW[180]
+    @D_PUMP_IN1_FLOW[182]
+    -
+    abs
+    (5)
+    >
+    @D_PUMP_IN2_FLOW[180]
+    @D_PUMP_IN2_FLOW[182]
+    -
+    abs
+    (5)
+    >
+    +
+    (0)
+    >
+
+- id: RATIO_PH_CL2
+  SCADA tag: RATIO_PH_CL2
+  evaluation type: wq
+  parameter type: RATIO
+  ignore changes: none
+  data options:
+    precision: 0.0001
+    units: ''
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+  composite rules: |
+    @D_CL2_VAL[0]
+    @D_PH_VAL[0]
+    /
+
+- id: TEST_RES_CL
+  SCADA tag: D_RES_CL2_VAL
+  evaluation type: wq
+  parameter type: CL2
+  ignore changes: none
+  data options:
+    precision: 0.0035
+    units: 'Mg/L'
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_PUMP1_CL
+  SCADA tag: D_IN1_CL2_VAL
+  evaluation type: wq
+  parameter type: CL2
+  ignore changes: none
+  data options:
+    precision: 0.0035
+    units: 'Mg/L'
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_PUMP2_CL
+  SCADA tag: D_IN2_CL2_VAL
+  evaluation type: wq
+  parameter type: CL2
+  ignore changes: none
+  data options:
+    precision: 0.0035
+    units: 'Mg/L'
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_PUMP1_PH
+  SCADA tag: D_IN1_PH_VAL
+  evaluation type: wq
+  parameter type: PH
+  ignore changes: none
+  data options:
+    precision: 0.01
+    units: 'pH'
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_PUMP2_PH
+  SCADA tag: D_IN2_PH_VAL
+  evaluation type: wq
+  parameter type: PH
+  ignore changes: none
+  data options:
+    precision: 0.01
+    units: 'pH'
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_VALVE
+  SCADA tag: D_VALVE
+  evaluation type: op
+  parameter type: FLOW
+  ignore changes: none
+  data options:
+    precision: 1
+    units: ''
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_CL2_ALM
+  SCADA tag: D_CL2_ALM
+  evaluation type: alm
+  parameter type: CL2
+  ignore changes: none
+  alarm options:
+    value when active: 0
+    scope: D_CL2_VAL
+
+- id: TEST_TOC_ALM
+  SCADA tag: D_TOC_ALM
+  evaluation type: alm
+  parameter type: TOC
+  ignore changes: none
+  alarm options:
+    value when active: 0
+    scope: D_TOC_VAL
+
+- id: TEST_COND_ALM
+  SCADA tag: D_COND_ALM
+  evaluation type: alm
+  parameter type: TOC
+  ignore changes: none
+  alarm options:
+    value when active: 0
+    scope: D_COND_VAL
+
+- id: TEST_CAL
+  SCADA tag: D_CAL
+  evaluation type: cal
+  parameter type: CAL
+  ignore changes: none
+  alarm options:
+    value when active: 0
+
+- id: CAL_StationD
+  SCADA tag: CAL_StationD
+  evaluation type: cal
+  parameter type: QUALITY
+  ignore changes: none
+  alarm options:
+    value when active: 1
+
+
+# Enter the list of event detection algorithms below
+algorithms: 
+- id: RESIDUAL_TEST
+  type: LPCF
+  history window: 60
+  outlier threshold: .inf
+  event threshold: .inf
+  event timeout: 5
+  event window save: 30
+
+
+# Enter the list of monitoring stations below
+monitoring stations:
+- id: StationD
+  station id number: 1
+  station tag name: StationD
+  location id number: 4
+  enabled: yes
+  inputs:
+    - id: csvfile
+  outputs:
+    - id: outputfiles
+  signals:
+    - id: CAL_StationD
+    - id: TEST_CL
+    - id: TEST_PH
+    - id: TEST_TEMP
+    - id: TEST_COND
+    - id: TEST_TURB
+    - id: TEST_TOC
+    - id: TEST_PUMPS
+    - id: RATIO_PH_CL2
+  algorithms:
+    - id: RESIDUAL_TEST
+

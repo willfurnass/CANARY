@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<canary>
+ <run-mode>BATCH</run-mode>
+ <datasource short-id="TST2_08" type="FILES" location="../sample_data/TST2_Jan_Aug_08.csv" datasource-class="" username="" password="" state="" >
+  <driver-config></driver-config>
+  <input-type>FILES</input-type>
+  <output-type></output-type>
+  <interactive-login>0</interactive-login>
+  <input-table></input-table>
+  <output-table></output-table>
+  <to-date-fmt></to-date-fmt>
+  <to-date-func></to-date-func>
+  <timestep-field>TIME_STEP</timestep-field>
+  <url-type></url-type>
+  <ipaddress></ipaddress>
+  <port></port>
+ </datasource>
+ <datasource short-id="OUTPUT" type="FILES" location="output_alg_java" datasource-class="" username="" password="" state="" >
+  <driver-config></driver-config>
+  <input-type></input-type>
+  <output-type>FILES</output-type>
+  <interactive-login>0</interactive-login>
+  <input-table></input-table>
+  <output-table></output-table>
+  <to-date-fmt></to-date-fmt>
+  <to-date-func></to-date-func>
+  <timestep-field>TIME_STEP</timestep-field>
+  <url-type></url-type>
+  <ipaddress></ipaddress>
+  <port></port>
+ </datasource>
+ <messaging type="INTERNAL" />
+ <timing-options data-interval="00:05:00" start-date="01/01/2008 00:00" stop-date="01/12/2008 23:55" datetime-format="mm/dd/yyyy HH:MM" dynamic-start="0" poll-interval="00:00:15" />
+ <Signals>
+  <Signal name="TST2_OTL1_OPS_TOPT" scada-tag="TST2_OTL1_OPS_TOPT" signal-type="op" parameter="FLOW" ignore-changes="none" >
+   <DataType precision="0.01" units="tcmd" data-min="0.000000" data-max="Inf" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TST2_OTL1_OPS_DHXX" scada-tag="TST2_OTL1_OPS_DHXX" signal-type="op" parameter="PRES" ignore-changes="none" >
+   <DataType precision="1.0" units="mH2O" data-min="0.000000" data-max="Inf" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TST2_OTL1_H2O_TRCX" scada-tag="TST2_OTL1_H2O_TRCX" signal-type="wq" parameter="CL" ignore-changes="none" >
+   <DataType precision="0.01" units="mg/L" data-min="0.050000" data-max="5.000000" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TST2_OTL1_H2O_PHXX" scada-tag="TST2_OTL1_H2O_PHXX" signal-type="wq" parameter="PH" ignore-changes="none" >
+   <DataType precision="0.01" units="pH" data-min="6.000000" data-max="11.000000" set-point-min="-Inf" set-point-max="Inf"/>
+  </Signal>
+  <Signal name="TST2_OTL1_H2O_CDTY" scada-tag="TST2_OTL1_H2O_CDTY" signal-type="wq" parameter="CDTY" ignore-changes="none" >
+   <DataType precision="5.0" units="uS/cm" data-min="1.000000" data-max="1000.000000" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TST2_OTL1_H2O_MTUR" scada-tag="TST2_OTL1_H2O_MTUR" signal-type="wq" parameter="TURB" ignore-changes="none" >
+   <DataType precision="0.01" units="NTU" data-min="0.000000" data-max="10.000000" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TST2_OTL1_H2O_FTUR" scada-tag="TST2_OTL1_H2O_FTUR" signal-type="wq" parameter="TURB" ignore-changes="none" >
+   <DataType precision="0.01" units="NTU" data-min="0.000000" data-max="10.000000" set-point-min="-Inf" set-point-max="Inf"/>
+  </Signal>
+  <Signal name="CAL_TST2_OTL1" scada-tag="CAL_TST2_OTL1" signal-type="cal" parameter="QUALITY" ignore-changes="none" >
+   <AlarmType alarm-scope="" active="1" tracking-lag="0" />
+  </Signal>
+ </Signals>
+ <Algorithms>
+  <Algorithm name="TST2_OTL1_SPPB" type="SPPB" history-window-TS="30" outlier-threshold-SD="20" event-threshold-P="0.995000" event-timeout-TS="10" >
+  </Algorithm>
+  <Algorithm name="MVNN_ORIG" type="MVNN" history-window-TS="90" outlier-threshold-SD="1" event-threshold-P="1.00" event-timeout-TS="12" >
+    <BED bed-window-TS="12" bed-P-outlier="0.500000" />
+  </Algorithm>
+  <Algorithm name="EXTR_TEST" type="EXTERNAL" history-window-TS="90" outlier-threshold-SD="1" event-threshold-P="1.00" event-timeout-TS="12" >
+    <ExternalAlgorithm class="org.teva.canary.algs.MultiAlgorithmLinker" >
+      <javaConfig>
+        <edsAlgorithm type="org.teva.canary.algs.MVNN" >
+          <history-window>90</history-window>
+          <outlier-threshold>1.0</outlier-threshold>
+          <event-threshold>1.0</event-threshold>
+          <rule-option>LINK_USE_RAW</rule-option>
+          <rule-option>ON_OUTLIER_KEEP_LAST</rule-option>
+          <rule-option>ON_EVENT_KEEP_LAST</rule-option>
+        </edsAlgorithm>
+        <!--><edsAlgorithm type="org.teva.canary.algs.BED" ><window>12</window><event-threshold>0.9</event-threshold><parameter name="probability-of-outlier">0.5</parameter><dataRule>USE_CONTRIB</dataRule></edsAlgorithm></-->
+      </javaConfig>
+    </ExternalAlgorithm>
+  </Algorithm>
+  <Algorithm name="JAVA_TEST" type="JAVA" history-window-TS="90" outlier-threshold-SD="1" event-threshold-P="1.00" event-timeout-TS="12" >
+    <BED bed-window-TS="12" bed-P-outlier="0.500000" />
+    <ExternalAlgorithm class="org.teva.canary.algs.MVNN" >
+      <javaConfig>
+        <edsAlgorithm type="org.teva.canary.algs.MVNN" >
+          <history-window>90</history-window>
+          <outlier-threshold>1.0</outlier-threshold>
+          <event-threshold>1.0</event-threshold>
+          <rule-option>LINK_USE_RAW</rule-option>
+          <rule-option>ON_OUTLIER_KEEP_LAST</rule-option>
+          <rule-option>ON_EVENT_KEEP_LAST</rule-option>
+        </edsAlgorithm>
+        <!--><edsAlgorithm type="org.teva.canary.algs.BED" ><window>12</window><event-threshold>0.9</event-threshold><parameter name="probability-of-outlier">0.5</parameter><dataRule>USE_CONTRIB</dataRule></edsAlgorithm></-->
+      </javaConfig>
+    </ExternalAlgorithm>
+  </Algorithm>
+ </Algorithms>
+ <general-settings>
+  <location scada-id="TST2_OTL1" output_Station="41" output_TagName="TST2_OTL1_CNRY_OUT" output_PointNr="6001" state="enabled" patListDir="PatternList" patGraphicsDir="Patterns" >
+   <use-input id="TST2_08" />
+   <use-output id="OUTPUT" />
+   <use-signal id="CAL_TST2_OTL1" />
+   <use-signal id="TST2_OTL1_H2O_TRCX" />
+   <use-signal id="TST2_OTL1_H2O_PHXX" />
+   <use-signal id="TST2_OTL1_H2O_CDTY" />
+   <use-signal id="TST2_OTL1_OPS_TOPT" />
+   <use-algorithm id="JAVA_TEST" />
+   <use-algorithm id="EXTR_TEST" />
+   <use-algorithm id="MVNN_ORIG" />
+  </location>
+ </general-settings>
+</canary>

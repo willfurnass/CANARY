@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment-project plugin="plugin.deploytool" plugin-version="1.0">
+  <configuration target="target.standalone" target-name="Console Application" name="canary_x64" location="D:\canary_trunk\packages\matlab\src" file="D:\canary_trunk\packages\matlab\src\canary_x64.prj" build-checksum="2969172770">
+    <param.project.name>D:\canary_trunk\packages\matlab\src\canary_x64.prj</param.project.name>
+    <param.target.type>Console Application</param.target.type>
+    <param.appname>canary</param.appname>
+    <param.intermediate>D:\hudson\workspace\Canary_trunk_r2013a_x64\src\..\build</param.intermediate>
+    <param.output>D:\hudson\workspace\Canary_trunk_r2013a_x64\src\..\build</param.output>
+    <param.embed.ctf>true</param.embed.ctf>
+    <param.tbx_on_path>
+      <item>all</item>
+    </param.tbx_on_path>
+    <param.warnings>
+      <warning.fullpath>on</warning.fullpath>
+      <warning.duplicate>on</warning.duplicate>
+      <warning.option.ignored>on</warning.option.ignored>
+      <warning.libname>on</warning.libname>
+      <warning.demo>on</warning.demo>
+    </param.warnings>
+    <param.version>1.0</param.version>
+    <param.user.only.registration>false</param.user.only.registration>
+    <param.c.cpp.options.file />
+    <param.include.dirs />
+    <param.lib.dirs />
+    <param.lib.files />
+    <param.defines />
+    <param.undefines />
+    <param.debug>false</param.debug>
+    <param.share.mcr>false</param.share.mcr>
+    <param.disable.jvm>false</param.disable.jvm>
+    <param.disable.display>false</param.disable.display>
+    <param.create.log>false</param.create.log>
+    <param.log.file />
+    <param.user.defined.mcr.options />
+    <unset>
+      <param.project.name />
+      <param.target.type />
+      <param.embed.ctf />
+      <param.tbx_on_path />
+      <param.warnings />
+      <param.version />
+      <param.user.only.registration />
+      <param.c.cpp.options.file />
+      <param.include.dirs />
+      <param.lib.dirs />
+      <param.lib.files />
+      <param.defines />
+      <param.undefines />
+      <param.debug />
+      <param.share.mcr />
+      <param.disable.jvm />
+      <param.disable.display />
+      <param.create.log />
+      <param.log.file />
+      <param.user.defined.mcr.options />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\canary.m</file>
+    </fileset.main>
+    <fileset.resources>
+      <file>${PROJECT_ROOT}\+cws\Algorithms.m</file>
+      <file>${PROJECT_ROOT}\+cws\CanaryEDS.m</file>
+      <file>${PROJECT_ROOT}\+cws\ClusterLib.m</file>
+      <file>${PROJECT_ROOT}\+cws\CSVDataSource.m</file>
+      <file>${PROJECT_ROOT}\+cws\currentTime.m</file>
+      <file>${PROJECT_ROOT}\+cws\DataSource.m</file>
+      <file>${PROJECT_ROOT}\+cws\DefnAlgorithm.m</file>
+      <file>${PROJECT_ROOT}\+cws\DefnControl.m</file>
+      <file>${PROJECT_ROOT}\+cws\DefnDatasource.m</file>
+      <file>${PROJECT_ROOT}\+cws\DefnLibrary.m</file>
+      <file>${PROJECT_ROOT}\+cws\DefnParameter.m</file>
+      <file>${PROJECT_ROOT}\+cws\DefnSignal.m</file>
+      <file>${PROJECT_ROOT}\+cws\DefnStation.m</file>
+      <file>${PROJECT_ROOT}\+cws\DefnTiming.m</file>
+      <file>${PROJECT_ROOT}\+cws\EDDIESDataSource.m</file>
+      <file>${PROJECT_ROOT}\+cws\ErrorCodes.m</file>
+      <file>${PROJECT_ROOT}\+cws\errTrace.m</file>
+      <file>${PROJECT_ROOT}\+cws\evaluate_timestep.m</file>
+      <file>${PROJECT_ROOT}\+cws\Event.m</file>
+      <file>${PROJECT_ROOT}\+cws\getCmdlineConfig.m</file>
+      <file>${PROJECT_ROOT}\+cws\JDBCDataSource.m</file>
+      <file>${PROJECT_ROOT}\+cws\Location.m</file>
+      <file>${PROJECT_ROOT}\+cws\logger.m</file>
+      <file>${PROJECT_ROOT}\+cws\main.m</file>
+      <file>${PROJECT_ROOT}\+cws\Message.m</file>
+      <file>${PROJECT_ROOT}\+cws\MessageCenter.m</file>
+      <file>${PROJECT_ROOT}\+cws\MessageList.m</file>
+      <file>${PROJECT_ROOT}\+cws\MSGRDataSource.m</file>
+      <file>${PROJECT_ROOT}\+cws\parse_defs_algs.m</file>
+      <file>${PROJECT_ROOT}\+cws\parse_defs_sigs.m</file>
+      <file>${PROJECT_ROOT}\+cws\parse_xml_config.m</file>
+      <file>${PROJECT_ROOT}\+cws\parse_yaml_config.m</file>
+      <file>${PROJECT_ROOT}\+cws\print.m</file>
+      <file>${PROJECT_ROOT}\+cws\process_message.m</file>
+      <file>${PROJECT_ROOT}\+cws\set_point_proximity.m</file>
+      <file>${PROJECT_ROOT}\+cws\Signals.m</file>
+      <file>${PROJECT_ROOT}\+cws\Timing.m</file>
+      <file>${PROJECT_ROOT}\+cws\trace.m</file>
+      <file>${PROJECT_ROOT}\+cws\verify_connection.m</file>
+      <file>${PROJECT_ROOT}\+cws\XMLDataSource.m</file>
+      <file>${PROJECT_ROOT}\+cws\XMLMessage.m</file>
+      <file>${PROJECT_ROOT}\+xml\bool.m</file>
+      <file>${PROJECT_ROOT}\+xml\get_attribute.m</file>
+      <file>${PROJECT_ROOT}\+xml\get_attribute_or_text.m</file>
+      <file>${PROJECT_ROOT}\+xml\get_child.m</file>
+      <file>${PROJECT_ROOT}\+xml\get_docnode.m</file>
+      <file>${PROJECT_ROOT}\+xml\get_text.m</file>
+      <file>${PROJECT_ROOT}\+xml\get_text_array.m</file>
+      <file>${PROJECT_ROOT}\+yaml\bool2str.m</file>
+      <file>${PROJECT_ROOT}\+yaml\num2str.m</file>
+      <file>${PROJECT_ROOT}\add_drivers.m</file>
+      <file>${PROJECT_ROOT}\argparse.m</file>
+      <file>${PROJECT_ROOT}\canary.ico</file>
+      <file>${PROJECT_ROOT}\canary_gui.fig</file>
+      <file>${PROJECT_ROOT}\canary_gui.m</file>
+      <file>${PROJECT_ROOT}\canary_main.m</file>
+      <file>${PROJECT_ROOT}\cgui_cluster_editor.fig</file>
+      <file>${PROJECT_ROOT}\cgui_cluster_editor.m</file>
+      <file>${PROJECT_ROOT}\clusterize.m</file>
+      <file>${PROJECT_ROOT}\combineEdsdFiles.m</file>
+      <file>${PROJECT_ROOT}\Contents.m</file>
+      <file>${PROJECT_ROOT}\convertCanaryData.m</file>
+      <file>${PROJECT_ROOT}\create_config_file.m</file>
+      <file>${PROJECT_ROOT}\create_yaml_config.m</file>
+      <file>${PROJECT_ROOT}\graphCanaryData.m</file>
+      <file>${PROJECT_ROOT}\graphClusterData.m</file>
+      <file>${PROJECT_ROOT}\graphResidsWithData.ico</file>
+      <file>${PROJECT_ROOT}\parse_configfile.m</file>
+      <file>${PROJECT_ROOT}\print_version.m</file>
+      <file>${PROJECT_ROOT}\readme.txt</file>
+      <file>${PROJECT_ROOT}\run_canary_tests.m</file>
+      <file>${PROJECT_ROOT}\run_coverage_tests.m</file>
+      <file>${PROJECT_ROOT}\snakeyaml.jar</file>
+      <file>${PROJECT_ROOT}\writeConfig.m</file>
+    </fileset.resources>
+    <fileset.package />
+    <build-deliverables>
+      <file name="readme.txt" location="D:\hudson\workspace\Canary_trunk_r2013a_x64\src\..\build" optional="true">D:\hudson\workspace\Canary_trunk_r2013a_x64\src\..\build\readme.txt</file>
+      <file name="canary.exe" location="D:\hudson\workspace\Canary_trunk_r2013a_x64\src\..\build" optional="false">D:\hudson\workspace\Canary_trunk_r2013a_x64\src\..\build\canary.exe</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2013a</root>
+      <toolboxes />
+      <path>
+        <directory>C:\Users\dbhart\Documents\MATLAB</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\testframework</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\demos</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\graph2d</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\graph3d</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\graphics</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\plottools</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\scribe</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\specgraph</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\uitools</directory>
+        <directory>${MATLAB_ROOT}\toolbox\local</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\optimfun</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\codetools</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\datafun</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\datamanager</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\datatypes</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\elfun</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\elmat</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\funfun</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\general</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\guide</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\helptools</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\iofun</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\lang</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\matfun</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\ops</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\polyfun</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\randfun</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\sparfun</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\specfun</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\strfun</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\timefun</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\verctrl</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\winfun</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\winfun\NET</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\apps</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\audiovideo</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\comparisons</directory>
+        <directory>${MATLAB_ROOT}\toolbox\compiler</directory>
+        <directory>${MATLAB_ROOT}\toolbox\compiler\compilerdemos</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\connector\connector</directory>
+        <directory>${MATLAB_ROOT}\toolbox\database\database</directory>
+        <directory>${MATLAB_ROOT}\toolbox\database\vqb</directory>
+        <directory>${MATLAB_ROOT}\toolbox\database\dbdemos</directory>
+        <directory>${MATLAB_ROOT}\toolbox\globaloptim</directory>
+        <directory>${MATLAB_ROOT}\toolbox\globaloptim\globaloptim</directory>
+        <directory>${MATLAB_ROOT}\toolbox\globaloptim\globaloptimdemos</directory>
+        <directory>${MATLAB_ROOT}\toolbox\images\colorspaces</directory>
+        <directory>${MATLAB_ROOT}\toolbox\images\images</directory>
+        <directory>${MATLAB_ROOT}\toolbox\images\imuitools</directory>
+        <directory>${MATLAB_ROOT}\toolbox\images\iptformats</directory>
+        <directory>${MATLAB_ROOT}\toolbox\images\iptutils</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\imagesci</directory>
+        <directory>${MATLAB_ROOT}\toolbox\images\imdemos</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\instrument</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\m3i</directory>
+        <directory>${MATLAB_ROOT}\toolbox\optim\optim</directory>
+        <directory>${MATLAB_ROOT}\toolbox\optim</directory>
+        <directory>${MATLAB_ROOT}\toolbox\optim\optimdemos</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\advisor</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\asynciolib</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\coder\coder</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\controllib\general</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\controllib\graphics</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\controllib\graphics\utils</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\controllib\graphics\plotoptions</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\dastudio</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\filterdesignlib</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\hwconnectinstaller\common</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\imageslib</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\measure</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\multimedia</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\optimlib</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\rptgen</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\siglib</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\spcuilib</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\statslib</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\testmeaslib\general</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\testmeaslib\graphics</directory>
+        <directory>${MATLAB_ROOT}\toolbox\signal\signal</directory>
+        <directory>${MATLAB_ROOT}\toolbox\signal\sigtools</directory>
+        <directory>${MATLAB_ROOT}\toolbox\signal\sptoolgui</directory>
+        <directory>${MATLAB_ROOT}\toolbox\signal\sigdemos</directory>
+        <directory>${MATLAB_ROOT}\toolbox\shared\simulink</directory>
+        <directory>${MATLAB_ROOT}\toolbox\stats\stats</directory>
+        <directory>${MATLAB_ROOT}\toolbox\stats\classreg</directory>
+        <directory>${MATLAB_ROOT}\toolbox\stats\statsdemos</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\system</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\timeseries</directory>
+        <directory>${MATLAB_ROOT}\toolbox\matlab\hds</directory>
+      </path>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>6.1</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
+

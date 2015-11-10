@@ -1,0 +1,49 @@
+<canary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:my="http://schemas.microsoft.com/office/infopath/2003/myXSD/2010-09-24T21:30:38" xmlns:xd="http://schemas.microsoft.com/office/infopath/2003">
+	<run-mode>BATCH</run-mode>
+	<data-dir/>
+	<debug>false</debug>
+	<datasource short-id="" state="enabled" type="CSV" input-type="" output-type="">
+		<location/>
+		<ipaddress/>
+		<port/>
+		<url-type/>
+		<datasource-class/>
+		<driver-config/>
+		<input-table/>
+		<output-table/>
+		<timestep-field/>
+		<to-date-func/>
+		<to-date-fmt/>
+		<username/>
+		<password/>
+		<interactive-login>false</interactive-login>
+		<canary-id/>
+	</datasource>
+	<messaging type="INTERNAL" use-id=""/>
+	<timing-options data-interval="" poll-interval="00:00:01" start-date="" end-date="" datetime-format="yyyy-mm-ddTHH:MM:SS" dynamic-start="false"/>
+	<Signals>
+		<Signal name="" scada-tag="" signal-type="WQ" parameter="" ignore-changes="none">
+			<DataType precision="0.0001" units="" data-min="-Inf" data-max="Inf" set-point-min="-Inf" set-point-max="Inf"/>
+		</Signal>
+	</Signals>
+	<Algorithms>
+		<Algorithm name="" type="LPCF" history-window-TS="" outlier-threshold-SD="" event-threshold-P="" event-timeout-TS="">
+		</Algorithm>
+	</Algorithms>
+	<general-settings>
+		<Station scada-id="" output_Station="" output_TagName="" output_PointNr="" state="enabled" patListDir="PatternList" patGraphicsDir="Patterns">
+			<use-input id=""/>
+			<use-output id=""/>
+			<use-signal id="" no-cluster="false"/>
+			<use-algorithm id=""/>
+		</Station>
+		<AlgorithmsFile name=""/>
+		<SignalsFile name=""/>
+	</general-settings>
+	<classpath/>
+	<xd:SchemaInfo LocalName="canary" NamespaceURI="">
+		<xd:Namespaces>
+			<xd:Namespace LocalName="canary" NamespaceURI=""/>
+		</xd:Namespaces>
+	</xd:SchemaInfo>
+</canary>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<canary>
+ <run-mode>BATCH</run-mode>
+ <datasource short-id="TST2_08" type="FILES" location="../sample_data/TST2_Jan_Aug_08.csv" datasource-class="" username="" password="" state="" >
+  <input-type>FILES</input-type>
+  <output-type></output-type>
+  <interactive-login>0</interactive-login>
+  <input-table></input-table>
+  <output-table></output-table>
+  <to-date-fmt></to-date-fmt>
+  <to-date-func></to-date-func>
+  <timestep-field>TIME_STEP</timestep-field>
+  <url-type></url-type>
+  <ipaddress></ipaddress>
+  <port></port>
+ </datasource>
+ <datasource short-id="OUTPUT" type="FILES" location="test_pat_uselib" datasource-class="" username="" password="" state="" >
+  <input-type></input-type>
+  <output-type>FILES</output-type>
+  <interactive-login>0</interactive-login>
+  <input-table></input-table>
+  <output-table></output-table>
+  <to-date-fmt></to-date-fmt>
+  <to-date-func></to-date-func>
+  <timestep-field>TIME_STEP</timestep-field>
+  <url-type></url-type>
+  <ipaddress></ipaddress>
+  <port></port>
+ </datasource>
+ <messaging type="internal" />
+ <timing-options data-interval="00:05:00" start-date="01/01/2008 00:00" stop-date="01/12/2008 23:55" datetime-format="mm/dd/yyyy HH:MM" dynamic-start="0" poll-interval="00:00:15" />
+ <Signals>
+  <Signal name="TST2_OTL1_OPS_TOPT" scada-tag="TST2_OTL1_OPS_TOPT" signal-type="op" parameter="FLOW" ignore-changes="none" >
+   <DataType precision="0.000100" units="tcmd" data-min="0.000000" data-max="Inf" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TST2_OTL1_OPS_DHXX" scada-tag="TST2_OTL1_OPS_DHXX" signal-type="op" parameter="PRES" ignore-changes="none" >
+   <DataType precision="0.010000" units="mH2O" data-min="0.000000" data-max="Inf" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TST2_OTL1_H2O_TRCX" scada-tag="TST2_OTL1_H2O_TRCX" signal-type="wq" parameter="CL" ignore-changes="none" >
+   <DataType precision="0.003500" units="mg/L" data-min="0.050000" data-max="5.000000" set-point-min="2.000000" set-point-max="2.400000" />
+  </Signal>
+  <Signal name="TST2_OTL1_H2O_PHXX" scada-tag="TST2_OTL1_H2O_PHXX" signal-type="wq" parameter="PH" ignore-changes="none" >
+   <DataType precision="0.010000" units="pH" data-min="6.000000" data-max="11.000000" set-point-min="7.800000" set-point-max="8.300000" />
+  </Signal>
+  <Signal name="TST2_OTL1_H2O_CDTY" scada-tag="TST2_OTL1_H2O_CDTY" signal-type="wq" parameter="CDTY" ignore-changes="none" >
+   <DataType precision="2.000000" units="uS/cm" data-min="1.000000" data-max="1000.000000" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TST2_OTL1_H2O_MTUR" scada-tag="TST2_OTL1_H2O_MTUR" signal-type="wq" parameter="TURB" ignore-changes="none" >
+   <DataType precision="0.010000" units="NTU" data-min="0.000000" data-max="10.000000" set-point-min="-1.000000" set-point-max="1.000000" />
+  </Signal>
+  <Signal name="TST2_OTL1_H2O_FTUR" scada-tag="TST2_OTL1_H2O_FTUR" signal-type="wq" parameter="TURB" ignore-changes="none" >
+   <DataType precision="0.010000" units="NTU" data-min="0.000000" data-max="10.000000" set-point-min="-1.000000" set-point-max="0.300000" />
+  </Signal>
+ </Signals>
+ <Algorithms>
+  <Algorithm name="TST2_OTL1_SPPB" type="SPPB" history-window-TS="30" outlier-threshold-SD="20" event-threshold-P="0.995000" event-timeout-TS="10" >
+   <Clustering load-from-file="../sample_data/TST2.edsc" />
+  </Algorithm>
+ </Algorithms>
+ <general-settings>
+  <location scada-id="TST2_OTL1" output_Station="41" output_TagName="TST2_OTL1_CNRY_OUT" output_PointNr="6001" state="enabled" >
+   <use-input id="TST2_08" />
+   <use-output id="OUTPUT" />
+   <use-signal id="TST2_OTL1_H2O_TRCX" />
+   <use-signal id="TST2_OTL1_H2O_PHXX" />
+   <use-signal id="TST2_OTL1_H2O_CDTY" />
+   <use-signal id="TST2_OTL1_OPS_TOPT" />
+   <use-algorithm id="TST2_OTL1_SPPB" />
+  </location>
+ </general-settings>
+</canary>

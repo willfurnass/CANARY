@@ -1,0 +1,324 @@
+# CANARY Config File - 2011-07-13T21:28:25
+runMode: BATCH
+extraJarFiles:
+
+datasource:
+  - id: database_sqlserver
+    type      : db
+    location  : jdbc:sqlserver://127.0.0.1;instanceName=SQLEXPRESS;databaseName=WDS_SIM
+    enabled   : yes
+    timestepOpts:
+      field      : "TIME_STEP"
+      format     : "120"
+      convertFunc: "CONVERT(datetime,"
+    databaseOpts:
+      className  : com.microsoft.sqlserver.jdbc.SQLServerDataSource
+      inputTable : "dbo.test_station_d_rows"
+      inputFormat: row based
+      outputTable: "dbo.test_output_d"
+      outputFormat: extended
+      timeDrift  : 0
+      login:
+        promptForLogin: no
+        username : sa
+        password : SYSTEM
+
+control:
+  type: INTERNAL
+  messenger: null
+
+timingOptions:
+  dateFormat  : mm/dd/yyyy HH:MM:SS
+  dynamicDates: off
+  startDate   : 03/01/2008 00:00:00
+  stopDate    : 03/28/2008 23:58:00
+  dataInterval: 00:02:00
+  readInterval: 00:00:01
+
+signal:
+  - id: TEST_CL
+    SCADATag     : D_CL2_VAL
+    type         : wq
+    parameter    : CL2
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.0035
+      units      : 'Mg/L'
+      validRange : [0.01, 5]
+      setPoints  : [-.inf, 3]
+
+  - id: TEST_COND
+    SCADATag     : D_COND_VAL
+    type         : wq
+    parameter    : COND
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 1
+      units      : '{\mu}S/cm'
+      validRange : [100, 1000]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_PH
+    SCADATag     : D_PH_VAL
+    type         : wq
+    parameter    : PH
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.01
+      units      : 'pH'
+      validRange : [2, 12]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_TEMP
+    SCADATag     : D_TEMP_VAL
+    type         : op
+    parameter    : TEMP
+    ignoreChanges: all
+    dataType:    # DATA
+      precision  : 0.1
+      units      : '^oC'
+      validRange : [3, 60]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_TOC
+    SCADATag     : D_TOC_VAL
+    type         : wq
+    parameter    : TOC
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.01
+      units      : 'ppm'
+      validRange : [0, 5]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_TURB
+    SCADATag     : D_TURB_VAL
+    type         : wq
+    parameter    : TURB
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.01
+      units      : 'NTU'
+      validRange : [0.01, 1]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_PUMP_CONN_FLOW
+    SCADATag     : D_PUMP_FLOW
+    type         : op
+    parameter    : FLOW
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.01
+      units      : 'gpm'
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_PUMP1_FLOW
+    SCADATag     : D_PUMP_IN1_FLOW
+    type         : op
+    parameter    : FLOW
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.01
+      units      : 'gpm'
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_PUMP2_FLOW
+    SCADATag     : D_PUMP_IN2_FLOW
+    type         : op
+    parameter    : FLOW
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.01
+      units      : 'gpm'
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_PUMPS
+    SCADATag     : D_TEST_PUMPS
+    type         : op
+    parameter    : FLOW
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.0001
+      units      : ''
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+    compositeType: |
+      @D_PUMP_IN1_FLOW[180]
+      @D_PUMP_IN1_FLOW[182]
+      -
+      abs
+      (5)
+      >
+      @D_PUMP_IN2_FLOW[180]
+      @D_PUMP_IN2_FLOW[182]
+      -
+      abs
+      (5)
+      >
+      +
+      (0)
+      >
+
+  - id: RATIO_PH_CL2
+    SCADATag     : RATIO_PH_CL2
+    type         : wq
+    parameter    : RATIO
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.0001
+      units      : ''
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+    compositeType: |
+      @D_CL2_VAL[0]
+      @D_PH_VAL[0]
+      /
+
+  - id: TEST_RES_CL
+    SCADATag     : D_RES_CL2_VAL
+    type         : wq
+    parameter    : CL2
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.0035
+      units      : 'Mg/L'
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_PUMP1_CL
+    SCADATag     : D_IN1_CL2_VAL
+    type         : wq
+    parameter    : CL2
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.0035
+      units      : 'Mg/L'
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_PUMP2_CL
+    SCADATag     : D_IN2_CL2_VAL
+    type         : wq
+    parameter    : CL2
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.0035
+      units      : 'Mg/L'
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_PUMP1_PH
+    SCADATag     : D_IN1_PH_VAL
+    type         : wq
+    parameter    : PH
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.01
+      units      : 'pH'
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_PUMP2_PH
+    SCADATag     : D_IN2_PH_VAL
+    type         : wq
+    parameter    : PH
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.01
+      units      : 'pH'
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_VALVE
+    SCADATag     : D_VALVE
+    type         : op
+    parameter    : FLOW
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 1
+      units      : ''
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_CL2_ALM
+    SCADATag     : D_CL2_ALM
+    type         : alm
+    parameter    : CL2
+    ignoreChanges: none
+    alarmType:   # ALARM
+      valueWhenActive: 0
+      scope      : D_CL2_VAL
+
+  - id: TEST_TOC_ALM
+    SCADATag     : D_TOC_ALM
+    type         : alm
+    parameter    : TOC
+    ignoreChanges: none
+    alarmType:   # ALARM
+      valueWhenActive: 0
+      scope      : D_TOC_VAL
+
+  - id: TEST_COND_ALM
+    SCADATag     : D_COND_ALM
+    type         : alm
+    parameter    : TOC
+    ignoreChanges: none
+    alarmType:   # ALARM
+      valueWhenActive: 0
+      scope      : D_COND_VAL
+
+  - id: TEST_CAL
+    SCADATag     : D_CAL
+    type         : cal
+    parameter    : CAL
+    ignoreChanges: none
+    alarmType:   # ALARM
+      valueWhenActive: 0
+      scope      : # entire station
+
+  - id: CAL_StationD
+    SCADATag     : CAL_StationD
+    type         : cal
+    parameter    : QUALITY
+    ignoreChanges: none
+    alarmType:   # ALARM
+      valueWhenActive: 1
+      scope      : # entire station
+
+
+algorithm: 
+  - id: RESIDUAL_TEST
+    type            : LPCF
+    historyWindow   : 60
+    outlierThreshold: .inf
+    eventThreshold  : .inf
+    eventTimeout    : 5
+    eventWindowSave : 30
+    bed:
+      window : 10
+
+
+station:
+  - id: StationD
+    StationNr     : 4
+    outputTag     : StationD
+    PointNr       : 1
+    enabled       : yes
+    patListDir    : PatternList
+    patGraphicsDir: Patterns
+    inputs:
+    - id: database_sqlserver
+    outputs:
+    - id: database_sqlserver
+    signals:
+    - id: CAL_StationD
+    - id: TEST_CL
+    - id: TEST_PH
+    - id: TEST_COND
+    - id: TEST_TURB
+    algorithms:
+    - id: RESIDUAL_TEST
+

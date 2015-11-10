@@ -1,0 +1,346 @@
+# CANARY Config File - 2011-07-13T21:29:07
+runMode: BATCH
+extraJarFiles:
+  - C:\drivers\mysql-connector-java-5.1.8-bin.jar
+  - ../../../drivers/mysql-connector-java-5.1.8-bin.jar
+
+datasource:
+  - id: database_mysql
+    type      : db
+    location  : jdbc:mysql://134.253.230.75:3306/canary_testing
+    enabled   : yes
+    configFile: 
+    timestepOpts:  # Ensure that the values you want are enclosed by "-quotes
+      field      : "TIME_STEP"
+      format     : "%Y-%m-%d %H:%i:%s"
+      convertFunc: "str_to_date"
+    databaseOpts:
+      timeDrift  : NaN
+      className  : com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+      inputTable : test_station_d
+      outputTable: 
+      login:
+        promptForLogin: no
+        username : CANARY_TESTING
+        password : CANARY
+
+  - id: output_files
+    type      : files
+    location  : output_MySQL_Server_5
+    enabled   : yes
+    configFile: 
+    timestepOpts:  # Ensure that the values you want are enclosed by "-quotes
+      field      : ""
+      format     : ""
+      convertFunc: ""
+    databaseOpts:
+      timeDrift  : NaN
+      className  : 
+      inputTable : 
+      outputTable: 
+      login:
+        promptForLogin: no
+        username : 
+        password : 
+
+control:
+  type: INTERNAL
+  messenger: null
+
+timingOptions:
+  dateFormat  : yyyy-mm-dd HH:MM:SS
+  dynamicDates: off
+  startDate   : 2008-01-15 00:00:00
+  stopDate    : 2008-01-30 13:48:00
+  dataInterval: 00:02:00
+  readInterval: 00:00:01
+
+signal:
+  - id: TEST_CL
+    SCADATag     : d_cl2_val
+    type         : wq
+    parameter    : CL2
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.0035
+      units      : 'Mg/L'
+      validRange : [0.01, 5]
+      setPoints  : [-.inf, 3]
+
+  - id: TEST_COND
+    SCADATag     : d_cond_val
+    type         : wq
+    parameter    : COND
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 1
+      units      : '{\mu}S/cm'
+      validRange : [100, 1000]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_PH
+    SCADATag     : d_ph_val
+    type         : wq
+    parameter    : PH
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.01
+      units      : 'pH'
+      validRange : [2, 12]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_TEMP
+    SCADATag     : d_temp_val
+    type         : op
+    parameter    : TEMP
+    ignoreChanges: all
+    dataType:    # DATA
+      precision  : 0.1
+      units      : '^oC'
+      validRange : [3, 60]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_TOC
+    SCADATag     : d_toc_val
+    type         : wq
+    parameter    : TOC
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.01
+      units      : 'ppm'
+      validRange : [0, 5]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_TURB
+    SCADATag     : d_turb_val
+    type         : wq
+    parameter    : TURB
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.01
+      units      : 'NTU'
+      validRange : [0.01, 1]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_PUMP_CONN_FLOW
+    SCADATag     : d_pump_flow
+    type         : op
+    parameter    : FLOW
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.01
+      units      : 'gpm'
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_PUMP1_FLOW
+    SCADATag     : d_pump_in1_flow
+    type         : op
+    parameter    : FLOW
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.01
+      units      : 'gpm'
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_PUMP2_FLOW
+    SCADATag     : d_pump_in2_flow
+    type         : op
+    parameter    : FLOW
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.01
+      units      : 'gpm'
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_PUMPS
+    SCADATag     : d_test_pumps
+    type         : op
+    parameter    : FLOW
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.0001
+      units      : ''
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+    compositeType: |
+      @d_pump_in1_flow[180]
+      @d_pump_in1_flow[182]
+      -
+      abs
+      (5)
+      >
+      @d_pump_in2_flow[180]
+      @d_pump_in2_flow[182]
+      -
+      abs
+      (5)
+      >
+      +
+      (0)
+      >
+
+  - id: RATIO_PH_CL2
+    SCADATag     : ratio_ph_cl2
+    type         : wq
+    parameter    : RATIO
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.0001
+      units      : ''
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+    compositeType: |
+      @d_cl2_val[0]
+      @d_ph_val[0]
+      /
+
+  - id: TEST_RES_CL
+    SCADATag     : d_res_cl2_val
+    type         : wq
+    parameter    : CL2
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.0035
+      units      : 'Mg/L'
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_PUMP1_CL
+    SCADATag     : d_in1_cl2_val
+    type         : wq
+    parameter    : CL2
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.0035
+      units      : 'Mg/L'
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_PUMP2_CL
+    SCADATag     : d_in2_cl2_val
+    type         : wq
+    parameter    : CL2
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.0035
+      units      : 'Mg/L'
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_PUMP1_PH
+    SCADATag     : d_in1_ph_val
+    type         : wq
+    parameter    : PH
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.01
+      units      : 'pH'
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_PUMP2_PH
+    SCADATag     : d_in2_ph_val
+    type         : wq
+    parameter    : PH
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 0.01
+      units      : 'pH'
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_VALVE
+    SCADATag     : d_valve
+    type         : op
+    parameter    : FLOW
+    ignoreChanges: none
+    dataType:    # DATA
+      precision  : 1
+      units      : ''
+      validRange : [-.inf, .inf]
+      setPoints  : [-.inf, .inf]
+
+  - id: TEST_CL2_ALM
+    SCADATag     : d_cl2_alm
+    type         : alm
+    parameter    : CL2
+    ignoreChanges: none
+    alarmType:   # ALARM
+      valueWhenActive: 0
+      scope      : D_CL2_VAL
+
+  - id: TEST_TOC_ALM
+    SCADATag     : d_toc_alm
+    type         : alm
+    parameter    : TOC
+    ignoreChanges: none
+    alarmType:   # ALARM
+      valueWhenActive: 0
+      scope      : D_TOC_VAL
+
+  - id: TEST_COND_ALM
+    SCADATag     : d_cond_alm
+    type         : alm
+    parameter    : TOC
+    ignoreChanges: none
+    alarmType:   # ALARM
+      valueWhenActive: 0
+      scope      : D_COND_VAL
+
+  - id: TEST_CAL
+    SCADATag     : D_CAL
+    type         : cal
+    parameter    : CAL
+    ignoreChanges: none
+    alarmType:   # ALARM
+      valueWhenActive: 0
+      scope      : # entire station
+
+  - id: CAL_StationD
+    SCADATag     : CAL_StationD
+    type         : cal
+    parameter    : QUALITY
+    ignoreChanges: none
+    alarmType:   # ALARM
+      valueWhenActive: 1
+      scope      : # entire station
+
+
+algorithm: 
+  - id: RESIDUAL_TEST
+    type            : LPCF
+    historyWindow   : 60
+    outlierThreshold: .inf
+    eventThreshold  : .inf
+    eventTimeout    : 5
+    eventWindowSave : 30
+
+
+station:
+  - id: StationD
+    StationNr     : 4
+    outputTag     : StationD
+    PointNr       : 1
+    enabled       : yes
+    patListDir    : PatternList
+    patGraphicsDir: Patterns
+    inputs:
+    - id: database_mysql
+    outputs:
+    - id: output_files
+    signals:
+    - id: CAL_StationD
+    - id: TEST_CL
+    - id: TEST_PH
+    - id: TEST_TEMP
+    - id: TEST_COND
+    - id: TEST_TURB
+    - id: TEST_TOC
+    - id: TEST_PUMPS
+    - id: RATIO_PH_CL2
+    algorithms:
+    - id: RESIDUAL_TEST
+

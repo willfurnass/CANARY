@@ -1,0 +1,247 @@
+--- # CANARY Config File
+# Auto generated - 2012-02-10T23:28:31
+
+canary:
+  run mode: BATCH
+  control type: INTERNAL
+  control messenger: null
+  driver files: 
+  - mysql-connector-java.jar
+
+# Enter the time step options below
+timing options:
+  dynamic start-stop: off
+  date-time format: mm/dd/yyyy HH:MM:SS
+  date-time start:  02/21/2006 00:00:00
+  date-time stop:   04/30/2006 23:40:00
+  data interval: 00:05:00
+  message interval: 00:00:01
+
+# Enter the list of data sources below
+data sources:
+  - id: stationb_in
+    type       : csv
+    location   : Tutorial_Station_B.csv
+    enabled    : yes
+    timestep options:
+      field: "TIME_STEP"
+
+  - id: database_mysql
+    type      : db
+    location  : jdbc:mysql://localhost:3307/dinesti
+    enabled   : yes
+    timestepOpts:  # Ensure that the values you want are enclosed by "-quotes
+      field      : "time_stamp"
+      format     : "%Y-%m-%d %H:%i:%s"
+      convertFunc: "str_to_date("
+    databaseOpts:
+      timeDrift  : 0
+      className  : com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+      outputTable: canary
+      output format: custom
+      output fields:
+        time-step : time_stamp
+        instance id : no
+        station id : name
+        algorithm id : no
+        parameter type : no
+        parameter residual : no
+        parameter tag : no
+        event code : event_code
+        event probability : event_prob
+        contributing parameters : no
+        pattern match id : no
+        patter match probability : no
+        secondary match id : no
+        secondary match probability : no
+        tertiary match id : no
+        tertiary match probability : no
+        comments : no
+      login:
+        promptForLogin: no
+        username : CANARY
+        password : CANARY
+
+
+# Enter the list of SCADA/composite signals/parameters below
+signals:
+- id: TEST_CL
+  SCADA tag: B_CL2_VAL
+  evaluation type: wq
+  parameter type: CL2
+  ignore changes: none
+  data options:
+    precision: 0.0035
+    units: 'Mg/L'
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_COND
+  SCADA tag: B_COND_VAL
+  evaluation type: wq
+  parameter type: COND
+  ignore changes: none
+  data options:
+    precision: 1
+    units: '{\mu}S/cm'
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_PH
+  SCADA tag: B_PH_VAL
+  evaluation type: wq
+  parameter type: PH
+  ignore changes: none
+  data options:
+    precision: 0.01
+    units: 'pH'
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_TEMP
+  SCADA tag: B_TEMP_VAL
+  evaluation type: op
+  parameter type: TEMP
+  ignore changes: none
+  data options:
+    precision: 0.1
+    units: '^oF'
+    valid range: [32, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_TOC
+  SCADA tag: B_TOC_VAL
+  evaluation type: wq
+  parameter type: TOC
+  ignore changes: none
+  data options:
+    precision: 0.01
+    units: 'ppb'
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_TURB
+  SCADA tag: B_TURB_VAL
+  evaluation type: wq
+  parameter type: TURB
+  ignore changes: none
+  data options:
+    precision: 0.01
+    units: 'NTU'
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_PRES
+  SCADA tag: B_PRES_OP
+  evaluation type: op
+  parameter type: PRES
+  ignore changes: none
+  data options:
+    precision: 0.01
+    units: 'PSI'
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_CL_PLNT
+  SCADA tag: B_PLNT_CL2_VAL
+  evaluation type: wq
+  parameter type: CL2
+  ignore changes: none
+  data options:
+    precision: 0.0035
+    units: 'Mg/L'
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_PH_PLNT
+  SCADA tag: B_PLNT_PH_VAL
+  evaluation type: wq
+  parameter type: PH
+  ignore changes: none
+  data options:
+    precision: 0.01
+    units: 'pH'
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_TURB_PLNT
+  SCADA tag: B_PLNT_TURB_VAL
+  evaluation type: wq
+  parameter type: TURB
+  ignore changes: none
+  data options:
+    precision: 0.01
+    units: 'NTU'
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_PRES_PLNT
+  SCADA tag: B_PLNT_PRES_OP
+  evaluation type: op
+  parameter type: PRES
+  ignore changes: none
+  data options:
+    precision: 0.4
+    units: 'PSI'
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: TEST_FLOW_PLNT
+  SCADA tag: B_PLNT_FLOW_OP
+  evaluation type: op
+  parameter type: FLOW
+  ignore changes: none
+  data options:
+    precision: 0.05
+    units: 'gpm'
+    valid range: [-.inf, .inf]
+    set points: [-.inf, .inf]
+
+- id: CAL_StationB
+  SCADA tag: CAL_StationB
+  evaluation type: cal
+  parameter type: QUALITY
+  ignore changes: none
+  alarm options:
+    value when active: 1
+
+
+# Enter the list of event detection algorithms below
+algorithms: 
+- id: test
+  type: LPCF
+  history window: 36
+  outlier threshold: 0.8
+  event threshold: 0.85
+  event timeout: 12
+  event window save: 30
+  BED:
+    window: 6
+    outlier probability: 0.5
+
+
+# Enter the list of monitoring stations below
+monitoring stations:
+- id: StationB03
+  station id number: 3
+  station tag name: p144551
+  location id number: -1
+  enabled: yes
+  inputs:
+    - id: stationb_in
+  outputs:
+    - id: database_mysql
+  signals:
+    - id: CAL_StationB
+    - id: TEST_CL
+    - id: TEST_PH
+    - id: TEST_TEMP
+    - id: TEST_COND
+    - id: TEST_TURB
+    - id: TEST_PRES_PLNT
+    - id: TEST_FLOW_PLNT
+    - id: TEST_TOC
+      cluster: no
+  algorithms:
+    - id: test
+

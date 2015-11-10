@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<canary-database>
+ <run-mode>BATCH</run-mode>
+ <data-dir></data-dir>
+ 
+ <datasource short-id="csvfile" type="csv" location="../sample_data/test_station_d.csv" state="enabled" >
+  <input-type></input-type>
+  <output-type></output-type>
+  <interactive-login>0</interactive-login>
+  <input-table>test_station_d</input-table>
+  <output-table></output-table>
+  <to-date-fmt>mm/dd/yyyy HH:MM</to-date-fmt>
+  <to-date-func></to-date-func>
+  <timestep-field>TIME_STEP</timestep-field>
+  <url-type></url-type>
+  <ipaddress></ipaddress>
+  <port></port>
+ </datasource>
+
+ <datasource short-id="output_files" type="files" location="output_CSV_File_Input" datasource-class="" username="" password="" state="enabled" >
+  <input-type></input-type>
+  <output-type>files</output-type>
+  <interactive-login>0</interactive-login>
+  <input-table></input-table>
+  <output-table></output-table>
+  <to-date-fmt></to-date-fmt>
+  <to-date-func></to-date-func>
+  <timestep-field></timestep-field>
+  <url-type></url-type>
+  <ipaddress></ipaddress>
+  <port></port>
+ </datasource>
+ 
+<messaging type="INTERNAL" />
+ <timing-options data-interval="00:02:00" start-date="2008-01-15 00:00:00" stop-date="2008-01-30 13:48:00" datetime-format="yyyy-mm-dd HH:MM:SS" dynamic-start="0" poll-interval="00:00:01" />
+ <Signals>
+  <Signal name="TEST_CL" scada-tag="D_CL2_VAL" signal-type="wq" parameter="CL2" ignore-changes="none" >
+   <DataType precision="0.003500" units="Mg/L" data-min="0.010000" data-max="5.000000" set-point-min="-Inf" set-point-max="3.000000" />
+  </Signal>
+  <Signal name="TEST_COND" scada-tag="D_COND_VAL" signal-type="wq" parameter="COND" ignore-changes="none" >
+   <DataType precision="1.000000" units="{\mu}S/cm" data-min="100.000000" data-max="1000.000000" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TEST_PH" scada-tag="D_PH_VAL" signal-type="wq" parameter="PH" ignore-changes="none" >
+   <DataType precision="0.010000" units="pH" data-min="2.000000" data-max="12.000000" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TEST_TEMP" scada-tag="D_TEMP_VAL" signal-type="op" parameter="TEMP" ignore-changes="all" >
+   <DataType precision="0.100000" units="^oC" data-min="3.000000" data-max="60.000000" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TEST_TOC" scada-tag="D_TOC_VAL" signal-type="wq" parameter="TOC" ignore-changes="none" >
+   <DataType precision="0.010000" units="ppm" data-min="0.000000" data-max="5.000000" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TEST_TURB" scada-tag="D_TURB_VAL" signal-type="wq" parameter="TURB" ignore-changes="none" >
+   <DataType precision="0.010000" units="NTU" data-min="0.010000" data-max="1.000000" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TEST_PUMP_CONN_FLOW" scada-tag="D_PUMP_FLOW" signal-type="op" parameter="FLOW" ignore-changes="none" >
+   <DataType precision="0.010000" units="gpm" data-min="-Inf" data-max="Inf" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TEST_PUMP1_FLOW" scada-tag="D_PUMP_IN1_FLOW" signal-type="op" parameter="FLOW" ignore-changes="none" >
+   <DataType precision="0.010000" units="gpm" data-min="-Inf" data-max="Inf" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TEST_PUMP2_FLOW" scada-tag="D_PUMP_IN2_FLOW" signal-type="op" parameter="FLOW" ignore-changes="none" >
+   <DataType precision="0.010000" units="gpm" data-min="-Inf" data-max="Inf" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TEST_PUMPS" scada-tag="D_TEST_PUMPS" signal-type="op" parameter="FLOW" ignore-changes="none" >
+   <CompositeSignal>
+    <Entry var="D_PUMP_IN1_FLOW" shift="180" />
+    <Entry var="D_PUMP_IN1_FLOW" shift="182" />
+    <Entry cmd="-" />
+    <Entry cmd="abs" />
+    <Entry const="5" />
+    <Entry cmd=">" />
+    <Entry var="D_PUMP_IN2_FLOW" shift="180" />
+    <Entry var="D_PUMP_IN2_FLOW" shift="182" />
+    <Entry cmd="-" />
+    <Entry cmd="abs" />
+    <Entry const="5" />
+    <Entry cmd=">" />
+    <Entry cmd="+" />
+    <Entry const="0" />
+    <Entry cmd=">" />
+   </CompositeSignal>
+  </Signal>
+  <Signal name="RATIO_PH_CL2" scada-tag="RATIO_PH_CL2" signal-type="wq" parameter="RATIO" ignore-changes="none" >
+   <CompositeSignal>
+    <Entry var="D_CL2_VAL" />
+    <Entry var="D_PH_VAL" />
+    <Entry cmd="/" />
+   </CompositeSignal>
+  </Signal>
+  <Signal name="TEST_RES_CL" scada-tag="D_RES_CL2_VAL" signal-type="wq" parameter="CL2" ignore-changes="none" >
+   <DataType precision="0.003500" units="Mg/L" data-min="-Inf" data-max="Inf" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TEST_PUMP1_CL" scada-tag="D_IN1_CL2_VAL" signal-type="wq" parameter="CL2" ignore-changes="none" >
+   <DataType precision="0.003500" units="Mg/L" data-min="-Inf" data-max="Inf" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TEST_PUMP2_CL" scada-tag="D_IN2_CL2_VAL" signal-type="wq" parameter="CL2" ignore-changes="none" >
+   <DataType precision="0.003500" units="Mg/L" data-min="-Inf" data-max="Inf" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TEST_PUMP1_PH" scada-tag="D_IN1_PH_VAL" signal-type="wq" parameter="PH" ignore-changes="none" >
+   <DataType precision="0.010000" units="pH" data-min="-Inf" data-max="Inf" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TEST_PUMP2_PH" scada-tag="D_IN2_PH_VAL" signal-type="wq" parameter="PH" ignore-changes="none" >
+   <DataType precision="0.010000" units="pH" data-min="-Inf" data-max="Inf" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TEST_VALVE" scada-tag="D_VALVE" signal-type="op" parameter="FLOW" ignore-changes="none" >
+   <DataType precision="1.000000" units="" data-min="-Inf" data-max="Inf" set-point-min="-Inf" set-point-max="Inf" />
+  </Signal>
+  <Signal name="TEST_CL2_ALM" scada-tag="D_CL2_ALM" signal-type="alm" parameter="CL2" ignore-changes="none" >
+   <AlarmType alarm-scope="D_CL2_VAL" active="0" tracking-lag="0" />
+  </Signal>
+  <Signal name="TEST_TOC_ALM" scada-tag="D_TOC_ALM" signal-type="alm" parameter="TOC" ignore-changes="none" >
+   <AlarmType alarm-scope="D_TOC_VAL" active="0" tracking-lag="0" />
+  </Signal>
+  <Signal name="TEST_COND_ALM" scada-tag="" signal-type="alm" parameter="TOC" ignore-changes="none" >
+   <AlarmType alarm-scope="D_COND_VAL" active="0" tracking-lag="0" />
+  </Signal>
+  <Signal name="TEST_CAL" scada-tag="D_CAL" signal-type="cal" parameter="CAL" ignore-changes="none" >
+   <AlarmType alarm-scope="" active="0" tracking-lag="0" />
+  </Signal>
+ </Signals>
+ <Algorithms>
+  <Algorithm name="RESIDUAL_TEST" type="LPCF" history-window-TS="60" outlier-threshold-SD="inf" event-threshold-P="inf" event-timeout-TS="5" >
+  </Algorithm>
+ </Algorithms>
+ <general-settings>
+  <location scada-id="StationD" output_Station="04" output_TagName="" output_PointNr="1" state="enabled" patListDir="PatternList" patGraphicsDir="Patterns" >
+   <use-input id="csvfile" />
+   <use-output id="output_files" />
+   <use-signal id="TEST_CL" />
+   <use-signal id="TEST_PH" />
+   <use-signal id="TEST_TEMP" />
+   <use-signal id="TEST_COND" />
+   <use-signal id="TEST_TURB" />
+   <use-signal id="TEST_TOC" />
+   <use-signal id="TEST_PUMPS" />
+   <use-signal id="RATIO_PH_CL2" />
+   <use-algorithm id="RESIDUAL_TEST" />
+  </location>
+ </general-settings>
+
+</canary-database>

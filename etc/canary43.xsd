@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xd="http://schemas.microsoft.com/office/infopath/2003" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:attribute name="short-id" type="requiredString"/>
+	<xsd:attribute name="state" type="xsd:string"/>
+	<xsd:attribute name="type" type="requiredString"/>
+	<xsd:attribute name="input-type" type="xsd:string"/>
+	<xsd:attribute name="output-type" type="xsd:string"/>
+	<xsd:attribute name="use-id" type="xsd:string"/>
+	<xsd:attribute name="data-interval" type="xsd:string"/>
+	<xsd:attribute name="poll-interval" type="xsd:string"/>
+	<xsd:attribute name="start-date" type="xsd:dateTime"/>
+	<xsd:attribute name="end-date" type="xsd:dateTime"/>
+	<xsd:attribute name="datetime-format" type="requiredString"/>
+	<xsd:attribute name="dynamic-start" type="xsd:boolean"/>
+	<xsd:attribute name="name" type="requiredString"/>
+	<xsd:attribute name="scada-tag" type="requiredString"/>
+	<xsd:attribute name="signal-type" type="requiredString"/>
+	<xsd:attribute name="parameter" type="xsd:string"/>
+	<xsd:attribute name="ignore-changes" type="xsd:string"/>
+	<xsd:attribute name="precision" type="xsd:double"/>
+	<xsd:attribute name="units" type="xsd:string"/>
+	<xsd:attribute name="data-min" type="xsd:string"/>
+	<xsd:attribute name="data-max" type="xsd:string"/>
+	<xsd:attribute name="set-point-min" type="xsd:string"/>
+	<xsd:attribute name="set-point-max" type="xsd:string"/>
+	<xsd:attribute name="alarm-scope" type="xsd:string"/>
+	<xsd:attribute name="active" type="requiredString"/>
+	<xsd:attribute name="tracking-lag" type="xsd:integer"/>
+	<xsd:attribute name="var" type="xsd:string"/>
+	<xsd:attribute name="shift" type="xsd:string"/>
+	<xsd:attribute name="const" type="xsd:string"/>
+	<xsd:attribute name="cmd" type="xsd:string"/>
+	<xsd:attribute name="history-window-TS" type="xsd:integer"/>
+	<xsd:attribute name="outlier-threshold-SD" type="xsd:double"/>
+	<xsd:attribute name="event-threshold-P" type="xsd:double"/>
+	<xsd:attribute name="event-timeout-TS" type="xsd:integer"/>
+	<xsd:attribute name="bed-window-TS" type="xsd:integer"/>
+	<xsd:attribute name="bed-P-outlier" type="xsd:double"/>
+	<xsd:attribute name="class" type="requiredString"/>
+	<xsd:attribute name="load-from-file" type="xsd:string"/>
+	<xsd:attribute name="cluster-at-P" type="xsd:string"/>
+	<xsd:attribute name="cluster-order-N" type="xsd:string"/>
+	<xsd:attribute name="cluster-window-size-TS" type="xsd:string"/>
+	<xsd:attribute name="cluster-fit-threshold-P" type="xsd:string"/>
+	<xsd:attribute name="scada-id" type="requiredString"/>
+	<xsd:attribute name="output_Station" type="xsd:string"/>
+	<xsd:attribute name="output_TagName" type="xsd:string"/>
+	<xsd:attribute name="output_PointNr" type="xsd:string"/>
+	<xsd:attribute name="patListDir" type="xsd:string"/>
+	<xsd:attribute name="patGraphicsDir" type="xsd:string"/>
+	<xsd:attribute name="id" type="requiredString"/>
+	<xsd:attribute name="no-cluster" type="xsd:boolean"/>
+	<xsd:element name="canary">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="run-mode" minOccurs="0"/>
+				<xsd:element ref="data-dir" minOccurs="0"/>
+				<xsd:element ref="debug" minOccurs="0"/>
+				<xsd:element ref="datasource" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="messaging" minOccurs="0"/>
+				<xsd:element ref="timing-options" minOccurs="0"/>
+				<xsd:element ref="Signals" minOccurs="0"/>
+				<xsd:element ref="Algorithms" minOccurs="0"/>
+				<xsd:element ref="general-settings" minOccurs="0"/>
+				<xsd:element ref="classpath" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:anyAttribute processContents="lax" namespace="http://www.w3.org/XML/1998/namespace"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="run-mode" type="requiredString"/>
+	<xsd:element name="data-dir" type="xsd:string"/>
+	<xsd:element name="debug" nillable="true" type="xsd:boolean"/>
+	<xsd:element name="datasource">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="location" minOccurs="0"/>
+				<xsd:element ref="ipaddress" minOccurs="0"/>
+				<xsd:element ref="port" minOccurs="0"/>
+				<xsd:element ref="url-type" minOccurs="0"/>
+				<xsd:element ref="datasource-class" minOccurs="0"/>
+				<xsd:element ref="driver-config" minOccurs="0"/>
+				<xsd:element ref="input-table" minOccurs="0"/>
+				<xsd:element ref="output-table" minOccurs="0"/>
+				<xsd:element ref="timestep-field" minOccurs="0"/>
+				<xsd:element ref="to-date-func" minOccurs="0"/>
+				<xsd:element ref="to-date-fmt" minOccurs="0"/>
+				<xsd:element ref="username" minOccurs="0"/>
+				<xsd:element ref="password" minOccurs="0"/>
+				<xsd:element ref="interactive-login" minOccurs="0"/>
+				<xsd:element ref="canary-id" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:attribute ref="short-id"/>
+			<xsd:attribute ref="state"/>
+			<xsd:attribute ref="type"/>
+			<xsd:attribute ref="input-type"/>
+			<xsd:attribute ref="output-type"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="location" type="xsd:string"/>
+	<xsd:element name="ipaddress" type="xsd:string"/>
+	<xsd:element name="port" type="xsd:string"/>
+	<xsd:element name="url-type" type="xsd:string"/>
+	<xsd:element name="datasource-class" type="xsd:string"/>
+	<xsd:element name="driver-config" type="xsd:string"/>
+	<xsd:element name="input-table" type="xsd:string"/>
+	<xsd:element name="output-table" type="xsd:string"/>
+	<xsd:element name="timestep-field" type="xsd:string"/>
+	<xsd:element name="to-date-func" type="xsd:string"/>
+	<xsd:element name="to-date-fmt" type="xsd:string"/>
+	<xsd:element name="username" type="xsd:string"/>
+	<xsd:element name="password" type="xsd:string"/>
+	<xsd:element name="interactive-login" nillable="true" type="xsd:boolean"/>
+	<xsd:element name="canary-id" type="xsd:string"/>
+	<xsd:element name="messaging">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute ref="type"/>
+			<xsd:attribute ref="use-id"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="timing-options">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute ref="data-interval"/>
+			<xsd:attribute ref="poll-interval"/>
+			<xsd:attribute ref="start-date"/>
+			<xsd:attribute ref="end-date"/>
+			<xsd:attribute ref="datetime-format"/>
+			<xsd:attribute ref="dynamic-start"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Signals">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Signal" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Signal">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="DataType" minOccurs="0"/>
+				<xsd:element ref="AlarmType" minOccurs="0"/>
+				<xsd:element ref="CompositeSignal" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:attribute ref="name"/>
+			<xsd:attribute ref="scada-tag"/>
+			<xsd:attribute ref="signal-type"/>
+			<xsd:attribute ref="parameter"/>
+			<xsd:attribute ref="ignore-changes"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="DataType">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute ref="precision"/>
+			<xsd:attribute ref="units"/>
+			<xsd:attribute ref="data-min"/>
+			<xsd:attribute ref="data-max"/>
+			<xsd:attribute ref="set-point-min"/>
+			<xsd:attribute ref="set-point-max"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AlarmType">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute ref="alarm-scope"/>
+			<xsd:attribute ref="active"/>
+			<xsd:attribute ref="tracking-lag"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="CompositeSignal">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Entry" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Entry">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:string">
+					<xsd:attribute ref="var"/>
+					<xsd:attribute ref="shift"/>
+					<xsd:attribute ref="const"/>
+					<xsd:attribute ref="cmd"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Algorithms">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Algorithm" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Algorithm">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="BED" minOccurs="0"/>
+				<xsd:element ref="UseAlgorithm" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="ExternalAlgorithm" minOccurs="0"/>
+				<xsd:element ref="Clustering" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:attribute ref="name"/>
+			<xsd:attribute ref="type"/>
+			<xsd:attribute ref="history-window-TS"/>
+			<xsd:attribute ref="outlier-threshold-SD"/>
+			<xsd:attribute ref="event-threshold-P"/>
+			<xsd:attribute ref="event-timeout-TS"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="BED">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute ref="bed-window-TS"/>
+			<xsd:attribute ref="bed-P-outlier"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="UseAlgorithm">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute ref="name"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ExternalAlgorithm">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute ref="class"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Clustering">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute ref="load-from-file"/>
+			<xsd:attribute ref="cluster-at-P"/>
+			<xsd:attribute ref="cluster-order-N"/>
+			<xsd:attribute ref="cluster-window-size-TS"/>
+			<xsd:attribute ref="cluster-fit-threshold-P"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="general-settings">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Station" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="AlgorithmsFile" minOccurs="0"/>
+				<xsd:element ref="SignalsFile" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Station">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="use-input" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="use-output" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="use-signal" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="use-algorithm" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute ref="scada-id"/>
+			<xsd:attribute ref="output_Station"/>
+			<xsd:attribute ref="output_TagName"/>
+			<xsd:attribute ref="output_PointNr"/>
+			<xsd:attribute ref="state"/>
+			<xsd:attribute ref="patListDir"/>
+			<xsd:attribute ref="patGraphicsDir"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="use-input">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute ref="id"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="use-output">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute ref="id"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="use-signal">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute ref="id"/>
+			<xsd:attribute ref="no-cluster"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="use-algorithm">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute ref="id"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AlgorithmsFile">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute ref="name"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="SignalsFile">
+		<xsd:complexType>
+			<xsd:sequence/>
+			<xsd:attribute ref="name"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="classpath" type="xsd:string"/>
+	<xsd:simpleType name="requiredString">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="requiredAnyURI">
+		<xsd:restriction base="xsd:anyURI">
+			<xsd:minLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="requiredBase64Binary">
+		<xsd:restriction base="xsd:base64Binary">
+			<xsd:minLength value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?mso-infoPathSolution name="urn:schemas-microsoft-com:office:infopath:etc:" href="manifest.xsf" solutionVersion="1.0.0.29" productVersion="12.0.0" PIVersion="1.0.0.0" ?>
+<?mso-application progid="InfoPath.Document" versionProgid="InfoPath.Document.2"?>
+<canary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:my="http://schemas.microsoft.com/office/infopath/2003/myXSD/2010-09-24T21:30:38" xmlns:xd="http://schemas.microsoft.com/office/infopath/2003">
+	<run-mode>BATCH</run-mode>
+	<data-dir></data-dir>
+	<debug>false</debug>
+	<datasource short-id="" state="enabled" type="CSV" input-type="" output-type="">
+		<location></location>
+		<ipaddress></ipaddress>
+		<port></port>
+		<url-type></url-type>
+		<datasource-class></datasource-class>
+		<driver-config></driver-config>
+		<input-table></input-table>
+		<output-table></output-table>
+		<timestep-field></timestep-field>
+		<to-date-func></to-date-func>
+		<to-date-fmt></to-date-fmt>
+		<username></username>
+		<password></password>
+		<interactive-login>false</interactive-login>
+		<canary-id></canary-id>
+	</datasource>
+	<messaging type="INTERNAL" use-id=""></messaging>
+	<timing-options data-interval="" poll-interval="00:00:01" start-date="" end-date="" datetime-format="yyyy-mm-ddTHH:MM:SS" dynamic-start="false"></timing-options>
+	<Signals>
+		<Signal name="" scada-tag="" signal-type="WQ" parameter="" ignore-changes="none"></Signal>
+	</Signals>
+	<Algorithms>
+		<Algorithm name="" type="LPCF" history-window-TS="" outlier-threshold-SD="" event-threshold-P="" event-timeout-TS="">
+			<BED bed-window-TS="" bed-P-outlier="0.5"></BED>
+			<UseAlgorithm name=""></UseAlgorithm>
+		</Algorithm>
+	</Algorithms>
+	<general-settings>
+		<Station scada-id="" output_Station="" output_TagName="" output_PointNr="" state="enabled" patListDir="PatternList" patGraphicsDir="Patterns">
+			<use-input id=""></use-input>
+			<use-output id=""></use-output>
+			<use-signal id="" no-cluster="false"></use-signal>
+			<use-algorithm id=""></use-algorithm>
+		</Station>
+	</general-settings>
+	<classpath></classpath>
+</canary>

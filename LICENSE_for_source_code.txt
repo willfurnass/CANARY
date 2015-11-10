@@ -1,0 +1,17 @@
+CANARY Event Detection System v4.3. Copyright (C) 2013 Sandia Labs
+
+This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA 
+
+CANARY v4.3 includes the following components, each of which has it's own license:
+
+ - Apache Commons (reusable software components written in Java) [1]
+ - MLCOVR, which is part of FAST, a Framework for Agile Software Development [2]
+ - SnakeYAML, a parser for the YAML markup language [3]
+
+ [1] http://commons.apache.org/
+ [2] http://www.mathworks.com/matlabcentral/fileexchange/24985-mlcovr-package
+ [3] https://bitbucket.org/asomov/snakeyaml
